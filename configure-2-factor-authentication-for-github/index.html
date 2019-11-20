@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Configure 2-Factor Authentication for Github</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css?v=1f147855ea" media="screen" />
+
+      <style>
+    .m-hero__picture {
+      background-image: url(/content/images/size/w2000/wordpress/2018/03/shutterstock_641960737.jpg);
+    }
+  
+    @media(max-width: 1000px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w1000/wordpress/2018/03/shutterstock_641960737.jpg);
+      }
+    }
+  
+    @media(max-width: 600px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w600/wordpress/2018/03/shutterstock_641960737.jpg);
+      }
+    }
+  </style>
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://sparker0i.github.io/configure-2-factor-authentication-for-github/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://sparker0i.github.io/configure-2-factor-authentication-for-github/amp/" />
+    
+    <meta property="og:site_name" content="Sparker0i&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Configure 2-Factor Authentication for Github" />
+    <meta property="og:description" content="Hello everyone, two-factor authentication (2-FA) in GitHub is a pretty simple
+procedure, if you are using a GUI. It could prove to be a difficult task if you
+are working with repositories from a Command Line Interface. In this blog post,
+I will explain how to properly set-up 2 Factor Authentication to work with
+GitHub.
+
+PS. I will be juggling between 2FA, 2-FA and 2 Factor Authentication throughout
+the post, rest assured that all mean the same
+
+ENABLE 2-FA IN GITHUB
+ 1. Sign-in to GitHub
+ 2. Cli" />
+    <meta property="og:url" content="https://sparker0i.github.io/configure-2-factor-authentication-for-github/" />
+    <meta property="og:image" content="https://sparker0i.github.io/content/images/wordpress/2018/03/shutterstock_641960737.jpg" />
+    <meta property="article:published_time" content="2018-03-24T23:32:42.000Z" />
+    <meta property="article:modified_time" content="2018-04-09T17:28:56.000Z" />
+    <meta property="article:tag" content="2FA" />
+    <meta property="article:tag" content="Git" />
+    <meta property="article:tag" content="GitHub" />
+    <meta property="article:tag" content="Linux" />
+    <meta property="article:tag" content="Programming" />
+    <meta property="article:tag" content="Repo" />
+    <meta property="article:tag" content="Solving-Technical" />
+    <meta property="article:tag" content="Two factor authentication" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Configure 2-Factor Authentication for Github" />
+    <meta name="twitter:description" content="Hello everyone, two-factor authentication (2-FA) in GitHub is a pretty simple
+procedure, if you are using a GUI. It could prove to be a difficult task if you
+are working with repositories from a Command Line Interface. In this blog post,
+I will explain how to properly set-up 2 Factor Authentication to work with
+GitHub.
+
+PS. I will be juggling between 2FA, 2-FA and 2 Factor Authentication throughout
+the post, rest assured that all mean the same
+
+ENABLE 2-FA IN GITHUB
+ 1. Sign-in to GitHub
+ 2. Cli" />
+    <meta name="twitter:url" content="https://sparker0i.github.io/configure-2-factor-authentication-for-github/" />
+    <meta name="twitter:image" content="https://sparker0i.github.io/content/images/wordpress/2018/03/shutterstock_641960737.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Aaditya Menon" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="2FA, Git, GitHub, Linux, Programming, Repo, Solving-Technical, Two factor authentication" />
+    <meta name="twitter:site" content="@Sparker0i" />
+    <meta name="twitter:creator" content="@Sparker0i" />
+    <meta property="og:image:width" content="780" />
+    <meta property="og:image:height" content="408" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Sparker0i&#x27;s Blog",
+        "logo": "https://sparker0i.github.io/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Aaditya Menon",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s=512&d=mm&r=g",
+            "width": 512,
+            "height": 512
+        },
+        "url": "https://sparker0i.github.io/author/sparker0i/",
+        "sameAs": [
+            "https://twitter.com/Sparker0i"
+        ]
+    },
+    "headline": "Configure 2-Factor Authentication for Github",
+    "url": "https://sparker0i.github.io/configure-2-factor-authentication-for-github/",
+    "datePublished": "2018-03-24T23:32:42.000Z",
+    "dateModified": "2018-04-09T17:28:56.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://sparker0i.github.io/content/images/wordpress/2018/03/shutterstock_641960737.jpg",
+        "width": 780,
+        "height": 408
+    },
+    "keywords": "2FA, Git, GitHub, Linux, Programming, Repo, Solving-Technical, Two factor authentication",
+    "description": "Hello everyone, two-factor authentication (2-FA) in GitHub is a pretty simple\nprocedure, if you are using a GUI. It could prove to be a difficult task if you\nare working with repositories from a Command Line Interface. In this blog post,\nI will explain how to properly set-up 2 Factor Authentication to work with\nGitHub.\n\nPS. I will be juggling between 2FA, 2-FA and 2 Factor Authentication throughout\nthe post, rest assured that all mean the same\n\nENABLE 2-FA IN GITHUB\n 1. Sign-in to GitHub\n 2. Cli",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sparker0i.github.io/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.0" />
+    <link rel="alternate" type="application/rss+xml" title="Sparker0i&#x27;s Blog" href="https://sparker0i.github.io/rss/" />
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      const ghostHost = "https://sparker0i.github.io"
+      // @license-end
+    </script>
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      WebFontConfig = {
+        google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
+      };
+
+      (function (d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+      // @license-end
+    </script>
+  </head>
+  <body class="post-template tag-2fa tag-git tag-github tag-linux tag-programming tag-repo tag-solving-technical tag-two-factor-authentication">
+    
+
+<div class="main-wrap">
+  
+  <header class="m-header with-picture js-header">
+  <div class="m-mobile-topbar" data-aos="fade-down">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+      <span class="icon-menu"></span>
+    </button>
+      <a href="https://sparker0i.github.io" class="m-logo in-mobile-topbar">
+        <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+      </a>
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
+      <span class="icon-search"></span>
+    </button>
+  </div>
+
+  <div class="m-menu js-menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+      <span class="icon-close"></span>
+    </button>
+    <div class="m-menu__main" data-aos="fade-down">
+      <div class="l-wrapper">
+        <div class="m-nav">
+          <nav class="m-nav__left">
+            <ul role="submenu">
+                <li class="only-desktop" role="menuitem">
+                  <a href="https://sparker0i.github.io" class="m-logo">
+                    <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+                  </a>
+                </li>
+              <li role="menuitem" class="js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
+                  <span class="icon-more"></span>
+                </button>
+                <div class="m-submenu js-submenu">
+                  <div class="l-wrapper in-submenu">
+                    <section class="m-recent-articles">
+                      <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+                      <div class="js-recent-articles">
+                        <div>
+                          <a href="/mysql-installation-inside-docker-on-mac/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2019/03/1_fqwE_Sk2pCO5orZTRoivgg.png"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">MySQL installation inside Docker on Mac</h3>
+                            <span class="m-recent-article__date">8 months ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/ipl-auction-strategies-analysis-and-likely-xi-prediction/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/12/dc-Cover-omhjdhpamrm6sqm474hartk7j5-20180527190509.Medi_.jpeg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">IPL Auction Strategies: Analysis and Likely XI Prediction</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/nokia-7-plus-phone-android-one-review/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/09/nokia-7-plus-mwc-launch.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">Nokia 7 Plus review: The best Android One Smartphone?</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/factory-visit-wood-cutting-factory/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/08/IMG_20171212_120510-1.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">Factory Visit - Episode of a visit to a Wood Cutting Factory</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="m-tags">
+                      <h3 class="m-submenu-title">Tags</h3>
+                      <ul>
+                        <li>
+                          <a href="/tag/2fa/">2FA</a>
+                        </li>
+                        <li>
+                          <a href="/tag/3-years/">3 years</a>
+                        </li>
+                        <li>
+                          <a href="/tag/adb/">ADB</a>
+                        </li>
+                        <li>
+                          <a href="/tag/asus/">ASUS</a>
+                        </li>
+                        <li>
+                          <a href="/tag/all-rounder/">All Rounder</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android/">Android</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-one/">Android One</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-project/">Android Project</a>
+                        </li>
+                        <li>
+                          <a href="/tag/assignment/">Assignment</a>
+                        </li>
+                        <li>
+                          <a href="/tag/csk/">CSK</a>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="m-nav__right">
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+              <span class="icon-search"></span>
+            </button>
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle dark mode">
+              <input type="checkbox" class="js-toggle-darkmode">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  
+
+  <section class="m-hero with-picture" data-aos="fade">
+    <div class="m-hero__picture in-post"></div>
+  </section>
+  
+  <main>
+    <article>
+      <div class="l-content in-post">
+        <div class="l-wrapper in-post  js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
+          <div class="l-post-content js-progress-content">
+            <header class="m-heading">
+              <h1 class="m-heading__title in-post">Configure 2-Factor Authentication for Github</h1>
+              <div class="m-heading__meta">
+                <a href="https://sparker0i.github.io/tag/2fa/" class="m-heading__meta__tag">2FA</a>
+                <span class="m-heading__meta__divider">&bull;</span>
+                <span class="m-heading__meta__time">Mar 25, 2018</span>
+              </div>
+            </header>
+            <div class="pos-relative js-post-content">
+              <div class="m-share">
+                <div class="m-share__content js-sticky">
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=https://sparker0i.github.io/configure-2-factor-authentication-for-github/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
+                    <span class="icon-facebook"></span>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?text=Configure%202-Factor%20Authentication%20for%20Github&url=https://sparker0i.github.io/configure-2-factor-authentication-for-github/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
+                    <span class="icon-arrow-top"></span>
+                    <svg>
+                      <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <!--kg-card-begin: html--><p>Hello everyone, two-factor authentication (2-FA) in GitHub is a pretty simple procedure, if you are using a GUI. It could prove to be a difficult task if you are working with repositories from a Command Line Interface. In this blog post, I will explain how to properly set-up 2 Factor Authentication to work with GitHub.</p>
+<p>PS. I will be juggling between 2FA, 2-FA and 2 Factor Authentication throughout the post, rest assured that all mean the same</p>
+<h3>ENABLE 2-FA IN GITHUB</h3>
+<ol>
+<li>Sign-in to GitHub</li>
+<li>Click on your profile picture at the top right corner of the navigation bar, and select Settings</li>
+<li>Select Security tab from the left selection panel, and then click set up Two-factor authentication.</li>
+<li>Select Set up using an app. Then you will see some recovery codes on your screen. If you uninstall the authenticator app from your phone, you will need access to the recovery codes to access your account again. Make sure you save it in a safe place.</li>
+<li>You will now configure 2 Factor Authentication from your phone</li>
+</ol>
+<h3>DOWNLOAD AN AUTHENTICATOR APP</h3>
+<p>There are a lot of options available for a 2FA app. The notable ones are Google Authenticator, Microsoft Authenticator, Lastpass Authenticator, Authy and Yubico Authenticator. If you want to backup 2FA codes and use it across devices, I would personally suggest you to use Authy. If not, Google Authenticator is a really good bet on Android as it is easy to use. In this tutorial I use Authy to do my job.</p>
+<ol>
+<li>Download and install <a href="https://play.google.com/store/apps/details?id=com.authy.authy&amp;hl=en">Authy</a> from the Google Play Store</li>
+<li>Login with your Authy account to restore your 2FA Codes from the backup in the cloud. If you don&#8217;t have one, it will prompt you to create one.</li>
+<li>Click on add new account from the three dots menu, then select Scan QR Code. Take a picture of the QR Code</li>
+<li>The app will now save your GitHub account. Then enter the security code from your app into the browser and click Enable.</li>
+</ol>
+<p>You have now configured your GitHub account with 2FA Succesfully. Now you will need to configure your local machine&#8217;s Git CLI or GUI with 2FA. If you are using a GUI like Gitkraken to manage your repositories, just sign-in to your GitHub account, and that&#8217;s it. Follow the next steps to configure your GitHub account with 2FA for the terminal</p>
+<h3>ENABLE GIT CREDENTIAL CACHING</h3>
+<p>Now that you have configured your GitHub account with 2FA, you will need to enter your access token (more on this later) instead of your password everytime. The problem with this is there is no way to remember an access token once you create one. So, after you create an access token you will need to store it in your local machine, which is why we will use git credential caching</p>
+<p>Since we are on a Linux terminal, we can use either of the following commands:</p>
+<pre class="lang:sh decode:true">git config --global credential.helper store</pre>
+<h3>CREATE PERSONAL ACCESS TOKEN</h3>
+<p>Personal access tokens function like ordinary OAuth access tokens. In other words, you can use it instead of your regular password for doing changes to your repo. This would be very useful as regular passwords don&#8217;t work with 2FA.</p>
+<p><a href="https://github.com/settings/tokens">Generate a GitHub API key</a> under “Personal Access Tokens” in the Settings page. You’ll use this for the Git command line. Leave the scopes unchanged.</p>
+<h3>PUSH THE REPO</h3>
+<p>After configuring the personal access token, you need to configure the terminal with it for the first time. Push a repo, it will ask for your username and password, instead of password add the personal access token there. Once you do it, you are done configuring 2FA with the Git repos on your system.</p>
+<h3>FURTHER READ</h3>
+<ul>
+<li><a href="https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/">TOTP mobile apps</a> (github.com)</li>
+<li><a href="https://help.github.com/articles/about-two-factor-authentication/">About two factor authentication</a> (github.com)</li>
+<li><a href="https://help.github.com/articles/providing-your-2fa-authentication-code/">Providing your 2FA Authentication Code</a> (github.com)</li>
+<li><a href="https://help.github.com/articles/downloading-your-two-factor-authentication-recovery-codes/">Downloading your two factor recovery codes</a> (github.com)</li>
+</ul>
+<!--kg-card-end: html-->
+            </div>
+          </div>
+        </div>
+        <section class="m-author no-subscribers">
+          <div class="m-author__content">
+            <div class="m-author__picture">
+              <a href="https://sparker0i.github.io/author/sparker0i/" class="m-author-picture" aria-label="Author picture">
+                <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+              </a>
+            </div>
+            <div class="m-author__info">
+              <h4 class="m-author__name">
+                <a href="https://sparker0i.github.io/author/sparker0i/">Aaditya Menon</a>
+              </h4>
+              <p class="m-author__bio">Little World</p>
+              <ul class="m-author-links">
+                <li>
+                  <a href="https://twitter.com/@Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="m-recommended">
+          <div class="l-wrapper in-recommended">
+            <h3 class="m-section-title in-recommended">Recommended for you</h3>
+            <div class="m-recommended-articles">
+              <div class="m-recommended-slider js-recommended-articles">
+                
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-android tag-assignment tag-java tag-programming tag-simple-weather tag-workshop">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/11/pp.jpg">
+      <a href="/how-it-all-began/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.github.io/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.github.io/tag/android/" class="m-article-card__tag">Android</a>
+      <a href="/how-it-all-began/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">How It All Began - The Journey To Android App Development</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>4 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-android tag-hardware-button tag-modifications tag-redmi-note-3 tag-solving-technical tag-tweaking">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/11/navbar.jpg">
+      <a href="/disable-hardware-buttons-redmi-note-3/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.github.io/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.github.io/tag/android/" class="m-article-card__tag">Android</a>
+      <a href="/disable-hardware-buttons-redmi-note-3/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">How To Disable Hardware Buttons in Redmi Note 3</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>2 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-android tag-assignment tag-java tag-programming tag-simple-weather tag-workshop">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/11/app-icon.png">
+      <a href="/simple-weather-now-in-the-google-play-store/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.github.io/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.github.io/tag/android/" class="m-article-card__tag">Android</a>
+      <a href="/simple-weather-now-in-the-google-play-store/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Simple Weather - now in the Google Play Store</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+</div>
+
+
+
+    
+<div class="m-search js-search">
+  <button class="m-icon-button outlined as-close-search js-close-search" aria-label="Close search">
+    <span class="icon-close"></span>
+  </button>
+  <div class="m-search__content">
+    <form class="m-search__form">
+      <fieldset>
+        <span class="icon-search m-search-icon"></span>
+        <input type="text" class="m-input in-search js-input-search" placeholder="Type to search" aria-label="Type to search">
+      </fieldset>
+    </form>
+    <div class="js-search-results hide"></div>
+    <p class="m-not-found align-center hide js-no-results">
+      No results for your search, try something different.
+    </p>
+  </div>
+</div>
+
+    
+<footer class="m-footer">
+  <div class="m-footer__content">
+    <p class="m-footer-copyright">
+      <span>Sparker0i&#x27;s Blog &copy; 2019</span>
+      <span>&nbsp; &bull; &nbsp;</span>
+      <span>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+    </p>
+
+    <nav class="m-footer-social">
+        <a href="https://twitter.com/Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+          <span class="icon-twitter"></span>
+        </a>
+    </nav>
+    <p class="m-footer-copyright jslicense">
+      <a href="/assets/html/javascript.html?v=1f147855ea" rel="jslicense">JavaScript license information</a>
+    </p>
+  </div>
+</footer>
+
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+    <script defer src="https://unpkg.com/@tryghost/content-api@1.2.7/umd/content-api.min.js"></script>
+    <script defer src="/assets/js/manifest.js?v=1f147855ea"></script>
+    <script defer src="/assets/js/vendor.js?v=1f147855ea"></script>
+    <script defer src="/assets/js/app.js?v=1f147855ea"></script>
+
+      <script defer src="/assets/js/post.js?v=1f147855ea"></script>
+
+
+    
+  </body>
+</html>

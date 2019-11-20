@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Install NVidia drivers the right way on Linux</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css?v=1f147855ea" media="screen" />
+
+      <style>
+    .m-hero__picture {
+      background-image: url(/content/images/size/w2000/wordpress/2017/10/nvidia-header.png);
+    }
+  
+    @media(max-width: 1000px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w1000/wordpress/2017/10/nvidia-header.png);
+      }
+    }
+  
+    @media(max-width: 600px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w600/wordpress/2017/10/nvidia-header.png);
+      }
+    }
+  </style>
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://sparker0i.github.io/install-nvidia-drivers-the-right-way-on-linux/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://sparker0i.github.io/install-nvidia-drivers-the-right-way-on-linux/amp/" />
+    
+    <meta property="og:site_name" content="Sparker0i&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Install NVidia drivers the right way on Linux" />
+    <meta property="og:description" content="Just a couple of months back I had bought a new laptop with Intel Core i5-6200U
+processor and NVIDIA GeForce 930M GPU. And being a first-timer on Linux, the
+first thing I tried to do was to install the latest graphic drivers by Intel and
+Nvidia, because that’s what most noobs do on Windows too.
+
+ [/content/images/wordpress/2017/10/nvidia-linux.jpg]
+
+So, being a Linux noobie at that time, I googled this thing and I ended up here
+(AskUbuntu being a reputed site, became my first choice among the se" />
+    <meta property="og:url" content="https://sparker0i.github.io/install-nvidia-drivers-the-right-way-on-linux/" />
+    <meta property="og:image" content="https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia-header.png" />
+    <meta property="article:published_time" content="2016-05-16T15:11:05.000Z" />
+    <meta property="article:modified_time" content="2018-03-25T14:09:54.000Z" />
+    <meta property="article:tag" content="Graphics" />
+    <meta property="article:tag" content="Linux" />
+    <meta property="article:tag" content="OS" />
+    <meta property="article:tag" content="Ubuntu" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Install NVidia drivers the right way on Linux" />
+    <meta name="twitter:description" content="Just a couple of months back I had bought a new laptop with Intel Core i5-6200U
+processor and NVIDIA GeForce 930M GPU. And being a first-timer on Linux, the
+first thing I tried to do was to install the latest graphic drivers by Intel and
+Nvidia, because that’s what most noobs do on Windows too.
+
+ [/content/images/wordpress/2017/10/nvidia-linux.jpg]
+
+So, being a Linux noobie at that time, I googled this thing and I ended up here
+(AskUbuntu being a reputed site, became my first choice among the se" />
+    <meta name="twitter:url" content="https://sparker0i.github.io/install-nvidia-drivers-the-right-way-on-linux/" />
+    <meta name="twitter:image" content="https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia-header.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Aaditya Menon" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Graphics, Linux, OS, Ubuntu" />
+    <meta name="twitter:site" content="@Sparker0i" />
+    <meta name="twitter:creator" content="@Sparker0i" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="576" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Sparker0i&#x27;s Blog",
+        "logo": "https://sparker0i.github.io/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Aaditya Menon",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s=512&d=mm&r=g",
+            "width": 512,
+            "height": 512
+        },
+        "url": "https://sparker0i.github.io/author/sparker0i/",
+        "sameAs": [
+            "https://twitter.com/Sparker0i"
+        ]
+    },
+    "headline": "Install NVidia drivers the right way on Linux",
+    "url": "https://sparker0i.github.io/install-nvidia-drivers-the-right-way-on-linux/",
+    "datePublished": "2016-05-16T15:11:05.000Z",
+    "dateModified": "2018-03-25T14:09:54.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia-header.png",
+        "width": 1024,
+        "height": 576
+    },
+    "keywords": "Graphics, Linux, OS, Ubuntu",
+    "description": "Just a couple of months back I had bought a new laptop with Intel Core i5-6200U\nprocessor and NVIDIA GeForce 930M GPU. And being a first-timer on Linux, the\nfirst thing I tried to do was to install the latest graphic drivers by Intel and\nNvidia, because that’s what most noobs do on Windows too.\n\n [/content/images/wordpress/2017/10/nvidia-linux.jpg]\n\nSo, being a Linux noobie at that time, I googled this thing and I ended up here\n(AskUbuntu being a reputed site, became my first choice among the se",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sparker0i.github.io/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.0" />
+    <link rel="alternate" type="application/rss+xml" title="Sparker0i&#x27;s Blog" href="https://sparker0i.github.io/rss/" />
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      const ghostHost = "https://sparker0i.github.io"
+      // @license-end
+    </script>
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      WebFontConfig = {
+        google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
+      };
+
+      (function (d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+      // @license-end
+    </script>
+  </head>
+  <body class="post-template tag-graphics tag-linux tag-os tag-ubuntu">
+    
+
+<div class="main-wrap">
+  
+  <header class="m-header with-picture js-header">
+  <div class="m-mobile-topbar" data-aos="fade-down">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+      <span class="icon-menu"></span>
+    </button>
+      <a href="https://sparker0i.github.io" class="m-logo in-mobile-topbar">
+        <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+      </a>
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
+      <span class="icon-search"></span>
+    </button>
+  </div>
+
+  <div class="m-menu js-menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+      <span class="icon-close"></span>
+    </button>
+    <div class="m-menu__main" data-aos="fade-down">
+      <div class="l-wrapper">
+        <div class="m-nav">
+          <nav class="m-nav__left">
+            <ul role="submenu">
+                <li class="only-desktop" role="menuitem">
+                  <a href="https://sparker0i.github.io" class="m-logo">
+                    <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+                  </a>
+                </li>
+              <li role="menuitem" class="js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
+                  <span class="icon-more"></span>
+                </button>
+                <div class="m-submenu js-submenu">
+                  <div class="l-wrapper in-submenu">
+                    <section class="m-recent-articles">
+                      <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+                      <div class="js-recent-articles">
+                        <div>
+                          <a href="/mysql-installation-inside-docker-on-mac/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2019/03/1_fqwE_Sk2pCO5orZTRoivgg.png"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">MySQL installation inside Docker on Mac</h3>
+                            <span class="m-recent-article__date">8 months ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/ipl-auction-strategies-analysis-and-likely-xi-prediction/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/12/dc-Cover-omhjdhpamrm6sqm474hartk7j5-20180527190509.Medi_.jpeg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">IPL Auction Strategies: Analysis and Likely XI Prediction</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/nokia-7-plus-phone-android-one-review/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/09/nokia-7-plus-mwc-launch.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">Nokia 7 Plus review: The best Android One Smartphone?</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/factory-visit-wood-cutting-factory/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/08/IMG_20171212_120510-1.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">Factory Visit - Episode of a visit to a Wood Cutting Factory</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="m-tags">
+                      <h3 class="m-submenu-title">Tags</h3>
+                      <ul>
+                        <li>
+                          <a href="/tag/2fa/">2FA</a>
+                        </li>
+                        <li>
+                          <a href="/tag/3-years/">3 years</a>
+                        </li>
+                        <li>
+                          <a href="/tag/adb/">ADB</a>
+                        </li>
+                        <li>
+                          <a href="/tag/asus/">ASUS</a>
+                        </li>
+                        <li>
+                          <a href="/tag/all-rounder/">All Rounder</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android/">Android</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-one/">Android One</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-project/">Android Project</a>
+                        </li>
+                        <li>
+                          <a href="/tag/assignment/">Assignment</a>
+                        </li>
+                        <li>
+                          <a href="/tag/csk/">CSK</a>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="m-nav__right">
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+              <span class="icon-search"></span>
+            </button>
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle dark mode">
+              <input type="checkbox" class="js-toggle-darkmode">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  
+
+  <section class="m-hero with-picture" data-aos="fade">
+    <div class="m-hero__picture in-post"></div>
+  </section>
+  
+  <main>
+    <article>
+      <div class="l-content in-post">
+        <div class="l-wrapper in-post  js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
+          <div class="l-post-content js-progress-content">
+            <header class="m-heading">
+              <h1 class="m-heading__title in-post">Install NVidia drivers the right way on Linux</h1>
+              <div class="m-heading__meta">
+                <a href="https://sparker0i.github.io/tag/graphics/" class="m-heading__meta__tag">Graphics</a>
+                <span class="m-heading__meta__divider">&bull;</span>
+                <span class="m-heading__meta__time">May 16, 2016</span>
+              </div>
+            </header>
+            <div class="pos-relative js-post-content">
+              <div class="m-share">
+                <div class="m-share__content js-sticky">
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=https://sparker0i.github.io/install-nvidia-drivers-the-right-way-on-linux/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
+                    <span class="icon-facebook"></span>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?text=Install%20NVidia%20drivers%20the%20right%20way%20on%20Linux&url=https://sparker0i.github.io/install-nvidia-drivers-the-right-way-on-linux/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
+                    <span class="icon-arrow-top"></span>
+                    <svg>
+                      <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <!--kg-card-begin: html--><p>Just a couple of months back I had bought a new laptop with Intel Core i5-6200U processor and NVIDIA GeForce 930M GPU. And being a first-timer on Linux, the first thing I tried to do was to install the latest graphic drivers by Intel and Nvidia, because that&#8217;s what most noobs do on Windows too.</p>
+<p><a href="https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia-linux.jpg"><img src="https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia-linux.jpg" alt="" class="alignnone size-full wp-image-17" width="600" height="360" srcset="https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia-linux.jpg 600w, https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia-linux-300x180.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></a></p>
+<p>So, being a Linux noobie at that time, I googled this thing and I ended up here (AskUbuntu being a reputed site, became my first choice among the search results). I did what the solution said, and ended up screwing my distro, it wouldn&#8217;t proceed past the login screen. I tried doing what a few other sites were telling, all ending up the same road. I tried using Ubuntu&#8217;s own Software Updater app too, ending on the same note again.</p>
+<p>Until one day I discovered that I could directly install the Graphics Driver from the Terminal without any hassles (sigh -_-)</p>
+<p>&nbsp;</p>
+<h3>WHAT NOT TO DO</h3>
+<p>These are what I tried ending up on the same road (not going past the Login screen despite the correct credentials)</p>
+<ul>
+<li>Trying to update via .run files provided by NVIDIA&#8217;s official site</li>
+<li>Trying to update via Ubuntu&#8217;s very own Software and Updates app.</li>
+<li>Having the following two repos and installing the driver via terminal</li>
+</ul>
+<pre class="attributes" lang="ruby">ppa:xorg-edgers/ppa
+ppa:mamarley/nvidia
+</pre>
+<ul>
+<li>Updating the kernel (unless you install the drivers)</li>
+</ul>
+<p>&nbsp;</p>
+<h3>WHAT TO DO</h3>
+<p>Now it&#8217;s a really simple process on Ubuntu 16.04 (Doing this on 15.10 was hell, checked the X Server Log Files and didn&#8217;t get anything special to boast about)</p>
+<p>Run these steps:</p>
+<ul>
+<li></li>
+</ul>
+<pre class="attributes" lang="ruby">sudo apt update
+</pre>
+<ul>
+<li>As a root user, run this command:</li>
+</ul>
+<pre class="attributes" lang="ruby">lshw -numeric -C display
+</pre>
+<p>OR</p>
+<p>&lt;</p>
+<p>pre class=&#8221;attributes&#8221; lang=&#8221;ruby&#8221;&gt;<br />
+lspci -vnn | grep VGA</p>
+<ul>
+<li>The output will show your NVidia model number. Example:</li>
+</ul>
+<pre class="attributes" lang="ruby">def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=&gt; prints 'Hi, Tom' to STDOUT.
+</pre>
+<pre class="attributes" lang="sh">*-display
+  description: VGA compatible controller
+  product: Sky Lake Integrated Graphics [8086:1916]
+  vendor: Intel Corporation [8086]
+  physical id: 2
+  bus info: pci@0000:00:02.0
+  version: 07
+  width: 64 bits
+  clock: 33MHz
+  capabilities: pciexpress msi pm vga_controller bus_master cap_list rom
+  configuration: driver=i915_bpo latency=0
+  resources: irq:128 memory:dd000000-ddffffff memory:b0000000-bfffffff ioport:f000(size=64)
+*-display
+  description: 3D controller
+  product: GM108M [GeForce 930M] [10DE:1346]
+  vendor: NVIDIA Corporation [10DE]
+  physical id: 0
+  bus info: pci@0000:01:00.0
+  version: a2
+  width: 64 bits
+  clock: 33MHz
+  capabilities: pm msi pciexpress bus_master cap_list rom
+  configuration: driver=nvidia latency=0
+  resources: irq:131 memory:de000000-deffffff memory:c0000000-cfffffff memory:d0000000-d1ffffff    ioport:e000(size=128) memory:df000000-df07ffff
+</pre>
+<ul>
+<li>The Model used by my system is GeForce 930M. Next, we will find a correct NVIDIA driver within the Ubuntu repos using this info. But before that, navigate <a href="http://www.nvidia.com/Download/index.aspx">here</a> and enter details. Example:</li>
+</ul>
+<p><a href="https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia_search_ubuntu_16_04.png"><img src="https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia_search_ubuntu_16_04.png" alt="" class="alignnone size-full wp-image-18" width="712" height="242" srcset="https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia_search_ubuntu_16_04.png 712w, https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia_search_ubuntu_16_04-300x102.png 300w" sizes="(max-width: 712px) 100vw, 712px" /></a></p>
+<p>-After a successful search, take a note of the driver number</p>
+<pre class="attributes" lang="ruby">Version:  361.42
+Release Date:  2016.3.30
+Operating System:  Linux 64-bit
+Language:  English (US)
+File Size:  82.74 MB 
+</pre>
+<p>-Then install the corresponding driver</p>
+<pre class="attributes" lang="ruby">sudo apt-get install nvidia-361
+...
+Done.
+
+nvidia_361:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.4.0-18-generic/updates/dkms/
+
+nvidia_361_modeset.ko:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.4.0-18-generic/updates/dkms/
+
+nvidia_361_uvm.ko:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.4.0-18-generic/updates/dkms/
+
+depmod........
+
+DKMS: install completed.
+Setting up ocl-icd-libopencl1:amd64 (2.2.8-1) ...
+Setting up nvidia-opencl-icd-361 (361.42-0ubuntu1) ...
+Setting up bbswitch-dkms (0.8-3ubuntu1) ...
+Loading new bbswitch-0.8 DKMS files...
+First Installation: checking all kernels...
+Building only for 4.4.0-18-generic
+Building initial module for 4.4.0-18-generic
+Done.
+
+bbswitch:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.4.0-18-generic/updates/dkms/
+
+depmod....
+
+DKMS: install completed.
+Setting up nvidia-prime (0.8.2) ...
+Setting up screen-resolution-extra (0.17.1) ...
+Setting up nvidia-settings (361.42-0ubuntu1) ...
+Setting up vdpau-driver-all:amd64 (1.1.1-3ubuntu1) ...
+Processing triggers for libc-bin (2.23-0ubuntu2) ...
+Processing triggers for initramfs-tools (0.122ubuntu6) ...
+update-initramfs: Generating /boot/initrd.img-4.4.0-18-generic
+Processing triggers for ureadahead (0.100.0-19) ...
+Processing triggers for dbus (1.10.6-1ubuntu3) ...
+</pre>
+<ul>
+<li>Now you can reboot your system. Then after loading Ubuntu, you can load the X Server Settings app:</li>
+</ul>
+<p><a href="https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia_configuration_menu_ubuntu_16_04.png"><img src="https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia_configuration_menu_ubuntu_16_04.png" alt="" class="alignnone size-full wp-image-16" width="668" height="452" srcset="https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia_configuration_menu_ubuntu_16_04.png 668w, https://sparker0i.github.io/content/images/wordpress/2017/10/nvidia_configuration_menu_ubuntu_16_04-300x203.png 300w" sizes="(max-width: 668px) 100vw, 668px" /></a></p>
+<p>&nbsp;</p>
+<h3>CONCLUSION</h3>
+<p>So that&#8217;s it, folks. This is the safest and a recommended way to install NVIDIA drivers for Linux. And I repeat, <strong>do not install the drivers using the .run file.</strong></p>
+<!--kg-card-end: html-->
+            </div>
+          </div>
+        </div>
+        <section class="m-author no-subscribers">
+          <div class="m-author__content">
+            <div class="m-author__picture">
+              <a href="https://sparker0i.github.io/author/sparker0i/" class="m-author-picture" aria-label="Author picture">
+                <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+              </a>
+            </div>
+            <div class="m-author__info">
+              <h4 class="m-author__name">
+                <a href="https://sparker0i.github.io/author/sparker0i/">Aaditya Menon</a>
+              </h4>
+              <p class="m-author__bio">Little World</p>
+              <ul class="m-author-links">
+                <li>
+                  <a href="https://twitter.com/@Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="m-recommended">
+          <div class="l-wrapper in-recommended">
+            <h3 class="m-section-title in-recommended">Recommended for you</h3>
+            <div class="m-recommended-articles">
+              <div class="m-recommended-slider js-recommended-articles">
+                
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-2fa tag-git tag-github tag-linux tag-programming tag-repo tag-solving-technical tag-two-factor-authentication">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2018/03/shutterstock_641960737.jpg">
+      <a href="/configure-2-factor-authentication-for-github/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.github.io/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.github.io/tag/2fa/" class="m-article-card__tag">2FA</a>
+      <a href="/configure-2-factor-authentication-for-github/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Configure 2-Factor Authentication for Github</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>2 years ago</span>
+          <span>&bull;</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-asus tag-natural tag-reverse tag-scrolling tag-touchpad tag-ubuntu">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2018/05/gnome-touchpad-featured-2.jpg">
+      <a href="/enable-natural-scrolling-using-libinput/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.github.io/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.github.io/tag/asus/" class="m-article-card__tag">ASUS</a>
+      <a href="/enable-natural-scrolling-using-libinput/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Enable Natural Scrolling for Trackpads using libinput</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>a year ago</span>
+          <span>&bull;</span>
+          <span>4 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-intel tag-linux tag-skylake tag-solving-technical tag-vlc">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/11/VLC.png">
+      <a href="/fix-vlc-video-always-overlay-linux/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.github.io/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.github.io/tag/intel/" class="m-article-card__tag">Intel</a>
+      <a href="/fix-vlc-video-always-overlay-linux/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Fix VLC Video Always Overlay on Linux</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>1 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+</div>
+
+
+
+    
+<div class="m-search js-search">
+  <button class="m-icon-button outlined as-close-search js-close-search" aria-label="Close search">
+    <span class="icon-close"></span>
+  </button>
+  <div class="m-search__content">
+    <form class="m-search__form">
+      <fieldset>
+        <span class="icon-search m-search-icon"></span>
+        <input type="text" class="m-input in-search js-input-search" placeholder="Type to search" aria-label="Type to search">
+      </fieldset>
+    </form>
+    <div class="js-search-results hide"></div>
+    <p class="m-not-found align-center hide js-no-results">
+      No results for your search, try something different.
+    </p>
+  </div>
+</div>
+
+    
+<footer class="m-footer">
+  <div class="m-footer__content">
+    <p class="m-footer-copyright">
+      <span>Sparker0i&#x27;s Blog &copy; 2019</span>
+      <span>&nbsp; &bull; &nbsp;</span>
+      <span>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+    </p>
+
+    <nav class="m-footer-social">
+        <a href="https://twitter.com/Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+          <span class="icon-twitter"></span>
+        </a>
+    </nav>
+    <p class="m-footer-copyright jslicense">
+      <a href="/assets/html/javascript.html?v=1f147855ea" rel="jslicense">JavaScript license information</a>
+    </p>
+  </div>
+</footer>
+
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+    <script defer src="https://unpkg.com/@tryghost/content-api@1.2.7/umd/content-api.min.js"></script>
+    <script defer src="/assets/js/manifest.js?v=1f147855ea"></script>
+    <script defer src="/assets/js/vendor.js?v=1f147855ea"></script>
+    <script defer src="/assets/js/app.js?v=1f147855ea"></script>
+
+      <script defer src="/assets/js/post.js?v=1f147855ea"></script>
+
+
+    
+  </body>
+</html>
