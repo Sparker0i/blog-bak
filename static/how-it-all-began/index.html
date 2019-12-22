@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>How It All Began - The Journey To Android App Development</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css?v=de61dba188" media="screen" />
+
+      <style>
+    .m-hero__picture {
+      background-image: url(/content/images/size/w2000/wordpress/2017/11/pp.jpg);
+    }
+  
+    @media(max-width: 1000px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w1000/wordpress/2017/11/pp.jpg);
+      }
+    }
+  
+    @media(max-width: 600px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w600/wordpress/2017/11/pp.jpg);
+      }
+    }
+  </style>
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://sparker0i.me/blog/how-it-all-began/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://sparker0i.me/blog/how-it-all-began/amp/" />
+    
+    <meta property="og:site_name" content="Sparker0i&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How It All Began - The Journey To Android App Development" />
+    <meta property="og:description" content="Of late I have nothing special to write about, other than the fact that I am
+working on updates of my app. Other than that, I recently created a Jekyll +
+Material Design + Github Pages Blog (The one you’re seeing right now). Why I
+chose this? This is because of the less latency of GitHub pages, which is what I
+love the most. I had noticed considerable slow loading time on my Blogger blog,
+so I moved here. Anyway, I’m going out of topic, so let’s come back to it.
+
+So in today’s blog post I’ll hig" />
+    <meta property="og:url" content="https://sparker0i.me/blog/how-it-all-began/" />
+    <meta property="og:image" content="https://sparker0i.me/blog/content/images/wordpress/2017/11/pp.jpg" />
+    <meta property="article:published_time" content="2016-11-12T19:09:52.000Z" />
+    <meta property="article:modified_time" content="2017-11-04T02:26:28.000Z" />
+    <meta property="article:tag" content="Android" />
+    <meta property="article:tag" content="Assignment" />
+    <meta property="article:tag" content="Java" />
+    <meta property="article:tag" content="Programming" />
+    <meta property="article:tag" content="Simple Weather" />
+    <meta property="article:tag" content="Workshop" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How It All Began - The Journey To Android App Development" />
+    <meta name="twitter:description" content="Of late I have nothing special to write about, other than the fact that I am
+working on updates of my app. Other than that, I recently created a Jekyll +
+Material Design + Github Pages Blog (The one you’re seeing right now). Why I
+chose this? This is because of the less latency of GitHub pages, which is what I
+love the most. I had noticed considerable slow loading time on my Blogger blog,
+so I moved here. Anyway, I’m going out of topic, so let’s come back to it.
+
+So in today’s blog post I’ll hig" />
+    <meta name="twitter:url" content="https://sparker0i.me/blog/how-it-all-began/" />
+    <meta name="twitter:image" content="https://sparker0i.me/blog/content/images/wordpress/2017/11/pp.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Aaditya Menon" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Android, Assignment, Java, Programming, Simple Weather, Workshop" />
+    <meta name="twitter:site" content="@Sparker0i" />
+    <meta name="twitter:creator" content="@Sparker0i" />
+    <meta property="og:image:width" content="576" />
+    <meta property="og:image:height" content="576" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Sparker0i&#x27;s Blog",
+        "logo": "https://sparker0i.me/blog/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Aaditya Menon",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s=512&d=mm&r=g",
+            "width": 512,
+            "height": 512
+        },
+        "url": "https://sparker0i.me/blog/author/sparker0i/",
+        "sameAs": [
+            "https://twitter.com/Sparker0i"
+        ]
+    },
+    "headline": "How It All Began - The Journey To Android App Development",
+    "url": "https://sparker0i.me/blog/how-it-all-began/",
+    "datePublished": "2016-11-12T19:09:52.000Z",
+    "dateModified": "2017-11-04T02:26:28.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://sparker0i.me/blog/content/images/wordpress/2017/11/pp.jpg",
+        "width": 576,
+        "height": 576
+    },
+    "keywords": "Android, Assignment, Java, Programming, Simple Weather, Workshop",
+    "description": "Of late I have nothing special to write about, other than the fact that I am\nworking on updates of my app. Other than that, I recently created a Jekyll +\nMaterial Design + Github Pages Blog (The one you’re seeing right now). Why I\nchose this? This is because of the less latency of GitHub pages, which is what I\nlove the most. I had noticed considerable slow loading time on my Blogger blog,\nso I moved here. Anyway, I’m going out of topic, so let’s come back to it.\n\nSo in today’s blog post I’ll hig",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sparker0i.me/blog/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.0" />
+    <link rel="alternate" type="application/rss+xml" title="Sparker0i&#x27;s Blog" href="https://sparker0i.me/blog/rss/" />
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      const ghostHost = "https://sparker0i.me/blog"
+      // @license-end
+    </script>
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      WebFontConfig = {
+        google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
+      };
+
+      (function (d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+      // @license-end
+    </script>
+  </head>
+  <body class="post-template tag-android tag-assignment tag-java tag-programming tag-simple-weather tag-workshop">
+    
+
+<div class="main-wrap">
+  
+  <header class="m-header with-picture js-header">
+  <div class="m-mobile-topbar" data-aos="fade-down">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+      <span class="icon-menu"></span>
+    </button>
+      <a href="https://sparker0i.me/blog" class="m-logo in-mobile-topbar">
+        <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+      </a>
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
+      <span class="icon-search"></span>
+    </button>
+  </div>
+
+  <div class="m-menu js-menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+      <span class="icon-close"></span>
+    </button>
+    <div class="m-menu__main" data-aos="fade-down">
+      <div class="l-wrapper">
+        <div class="m-nav">
+          <nav class="m-nav__left">
+            <ul role="submenu">
+                <li class="only-desktop" role="menuitem">
+                  <a href="https://sparker0i.me/blog" class="m-logo">
+                    <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+                  </a>
+                </li>
+              <li role="menuitem" class="js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
+                  <span class="icon-more"></span>
+                </button>
+                <div class="m-submenu js-submenu">
+                  <div class="l-wrapper in-submenu">
+                    <section class="m-recent-articles">
+                      <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+                      <div class="js-recent-articles">
+                        <div>
+                          <a href="/ipl-2020-auction-experience-with-rcb/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/2019/12/77062915_620803191999653_2243580465715061965_n.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">IPL 2020 Auction experience with RCB</h3>
+                            <span class="m-recent-article__date">8 minutes ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/mysql-installation-inside-docker-on-mac/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2019/03/1_fqwE_Sk2pCO5orZTRoivgg.png"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">MySQL installation inside Docker on Mac</h3>
+                            <span class="m-recent-article__date">9 months ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/ipl-auction-strategies-analysis-and-likely-xi-prediction/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/12/dc-Cover-omhjdhpamrm6sqm474hartk7j5-20180527190509.Medi_.jpeg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">IPL Auction Strategies: Analysis and Likely XI Prediction</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/nokia-7-plus-phone-android-one-review/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/09/nokia-7-plus-mwc-launch.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">Nokia 7 Plus review: The best Android One Smartphone?</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="m-tags">
+                      <h3 class="m-submenu-title">Tags</h3>
+                      <ul>
+                        <li>
+                          <a href="/tag/2fa/">2FA</a>
+                        </li>
+                        <li>
+                          <a href="/tag/3-years/">3 years</a>
+                        </li>
+                        <li>
+                          <a href="/tag/adb/">ADB</a>
+                        </li>
+                        <li>
+                          <a href="/tag/asus/">ASUS</a>
+                        </li>
+                        <li>
+                          <a href="/tag/all-rounder/">All Rounder</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android/">Android</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-one/">Android One</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-project/">Android Project</a>
+                        </li>
+                        <li>
+                          <a href="/tag/assignment/">Assignment</a>
+                        </li>
+                        <li>
+                          <a href="/tag/csk/">CSK</a>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="m-nav__right">
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+              <span class="icon-search"></span>
+            </button>
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle dark mode">
+              <input type="checkbox" class="js-toggle-darkmode">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  
+
+  <section class="m-hero with-picture" data-aos="fade">
+    <div class="m-hero__picture in-post"></div>
+  </section>
+  
+  <main>
+    <article>
+      <div class="l-content in-post">
+        <div class="l-wrapper in-post  js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
+          <div class="l-post-content js-progress-content">
+            <header class="m-heading">
+              <h1 class="m-heading__title in-post">How It All Began - The Journey To Android App Development</h1>
+              <div class="m-heading__meta">
+                <a href="https://sparker0i.me/blog/tag/android/" class="m-heading__meta__tag">Android</a>
+                <span class="m-heading__meta__divider">&bull;</span>
+                <span class="m-heading__meta__time">Nov 13, 2016</span>
+              </div>
+            </header>
+            <div class="pos-relative js-post-content">
+              <div class="m-share">
+                <div class="m-share__content js-sticky">
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=https://sparker0i.me/blog/how-it-all-began/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
+                    <span class="icon-facebook"></span>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?text=How%20It%20All%20Began%20-%20The%20Journey%20To%20Android%20App%20Development&url=https://sparker0i.me/blog/how-it-all-began/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
+                    <span class="icon-arrow-top"></span>
+                    <svg>
+                      <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <!--kg-card-begin: html--><p>Of late I have nothing special to write about, other than the fact that I am working on updates of my app. Other than that, I recently created a Jekyll + Material Design + Github Pages Blog (The one you&#8217;re seeing right now). Why I chose this? This is because of the less latency of GitHub pages, which is what I love the most. I had noticed considerable slow loading time on my Blogger blog, so I moved here. Anyway, I&#8217;m going out of topic, so let&#8217;s come back to it.</p>
+<p>So in today&#8217;s blog post I&#8217;ll highlight how it all began &#8211; my passion for developing Android apps.</p>
+<p>It all started in April 2016, when we were informed of the Summer internships going on in our college. I wasn&#8217;t actually interested in any of this, but on my mom&#8217;s insistence (well actually a forced one though), I decided to take up one of them. We had three options to choose from &#8211; Robotics, Open Source Contributions and Android App Development. I decided to take up Android App Development, because I believed that the Robotics Workshop will be back next year, and since I&#8217;m a part of the FOSS Club, I could skip out on the Contributions workshop too.</p>
+<p>So, the workshop journey started in June 2016, wherein for the first three days we were taught Java, and then we started off with the actual stuff &#8211; programming in Android Studio. Compared to others, I was the one finishing the tasks in the CS With Android Course earlier. So this actually helped me build confidence. I had prior knowledge of developing Windows 10 Apps, not at a large scale, though enough for basic development, along with DirectX. So maybe, this thing helped me easily grasp everything.</p>
+<p>After the workshop got over, we were given an assignment by my mentor, Mr. Chandramohan Sudar, aka Chandru Ettan (I&#8217;ll be calling him like this throughout this post, so sorry!) to develop an Android App. I started my work on the app, the day I reached home. I was building a simple Weather application which displayed nothing more than current temperature and a 10 day temperature view for a city. The UI was horrible, I decided to finish it off, and I sent that app to Chandru Ettan. This was in July 2016.</p>
+<p>I paused this app&#8217;s development for 2 months as I had decided to focus on my academics and college related stuff. Then came September-October 2016. This is when I actually got time to focus more on my app than do anything else, because we had a leave of 23 days (minus 5, for the 5 weekdays that came in between these 23 days) and that gave me ample time to finish my app. By the time the vacation began, I had already finished off with the base implementation and I needed to focus more on the design work.</p>
+<p>My efforts didn&#8217;t go in vain, as I believe that I had beautifully designed my app. What began from here (left), ended here (right)</p>
+<div class='white' style='background:rgba(0,0,0,0); border:solid 0px rgba(0,0,0,0); border-radius:0px; padding:0px 0px 0px 0px;'>
+<div id='slider_115' class='owl-carousel sa_owl_theme owl-pagination-true autohide-arrows' data-slider-id='slider_115' style='visibility:hidden;'>
+<div id='slider_115_slide01' class='sa_hover_container' style='padding:5% 5%; margin:0px 0%; '><p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/First.png"><img class="alignnone size-full wp-image-116" src="https://sparker0i.me/blog/content/images/wordpress/2017/11/First.png" alt="" width="307" height="545" /></a></p></div>
+<div id='slider_115_slide02' class='sa_hover_container' style='padding:5% 5%; margin:0px 0%; '><p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/next.jpg"><img class="alignnone size-full wp-image-117" src="https://sparker0i.me/blog/content/images/wordpress/2017/11/next.jpg" alt="" width="540" height="960" /></a></p></div>
+</div>
+</div>
+<script type='text/javascript'>
+	jQuery(document).ready(function() {
+		jQuery('#slider_115').owlCarousel({
+			items : 1,
+			smartSpeed : 200,
+			autoplay : true,
+			autoplayTimeout : 5000,
+			autoplayHoverPause : true,
+			smartSpeed : 200,
+			fluidSpeed : 200,
+			autoplaySpeed : 200,
+			navSpeed : 200,
+			dotsSpeed : 200,
+			loop : true,
+			nav : true,
+			navText : ['',''],
+			dots : true,
+			responsiveRefreshRate : 200,
+			slideBy : 1,
+			mergeFit : true,
+			autoHeight : false,
+			mouseDrag : true,
+			touchDrag : true
+		});
+		jQuery('#slider_115').css('visibility', 'visible');
+		sa_resize_slider_115();
+		window.addEventListener('resize', sa_resize_slider_115);
+		function sa_resize_slider_115() {
+			var min_height = '50';
+			var win_width = jQuery(window).width();
+			var slider_width = jQuery('#slider_115').width();
+			if (win_width < 480) {
+				var slide_width = slider_width / 1;
+			} else if (win_width < 768) {
+				var slide_width = slider_width / 1;
+			} else if (win_width < 980) {
+				var slide_width = slider_width / 1;
+			} else if (win_width < 1200) {
+				var slide_width = slider_width / 1;
+			} else if (win_width < 1500) {
+				var slide_width = slider_width / 1;
+			} else {
+				var slide_width = slider_width / 1;
+			}
+			slide_width = Math.round(slide_width);
+			var slide_height = '0';
+			if (min_height == 'aspect43') {
+				slide_height = (slide_width / 4) * 3;				slide_height = Math.round(slide_height);
+			} else if (min_height == 'aspect169') {
+				slide_height = (slide_width / 16) * 9;				slide_height = Math.round(slide_height);
+			} else {
+				slide_height = (slide_width / 100) * min_height;				slide_height = Math.round(slide_height);
+			}
+			jQuery('#slider_115 .owl-item .sa_hover_container').css('min-height', slide_height+'px');
+		}
+	});
+</script>
+
+<p>Then after a few days I created a publisher&#8217;s account in Google Play Store as well. I published my app over there. I felt proud of my achievement. What started as an assignment work ended up being deployed in the Google Play Store. After a month, here&#8217;s how things stand (partly because I did not pay to promote my app, it was all organic) :</p>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/install.jpg"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/install.jpg" alt="" width="540" height="960" class="alignnone size-full wp-image-118" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/install.jpg 540w, https://sparker0i.me/blog/content/images/wordpress/2017/11/install-169x300.jpg 169w" sizes="(max-width: 540px) 100vw, 540px" /></a></p>
+<p>Here&#8217;s what I&#8217;ve done After I uploaded the app to the Play Store. Firstly, I confessed to Vipin sir (guru/mentor of our FOSS Club) that after uploading this app, my interest has deviated to Android, and being in the FOSS Club I wasn&#8217;t getting too many opportunities in developing this interest. So he advised me to call some of my other Android peers and mentor them to participate in worldwide competitions, and learn resources from the internet. So I did that, and now I&#8217;m mentoring folks who ask me for help in Android app development. I&#8217;ve also set the logo of our team, which is:</p>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/pp.jpg"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/pp.jpg" alt="" width="576" height="576" class="alignnone size-full wp-image-119" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/pp.jpg 576w, https://sparker0i.me/blog/content/images/wordpress/2017/11/pp-150x150.jpg 150w, https://sparker0i.me/blog/content/images/wordpress/2017/11/pp-300x300.jpg 300w" sizes="(max-width: 576px) 100vw, 576px" /></a></p>
+<p>The next thing I&#8217;ve done is developing a custom ROM. Well, I didn&#8217;t actually create it on my own. I built it from the available CyanogenMod source already available for the Redmi Note 3. In future, I hope to create my own CyanogenMod ROMs.</p>
+<p>I&#8217;m also targeting to participate in <a href="http://www.mobile-asia.com/">MCAP</a> for the February 2018 edition.</p>
+<p>Until another blog post, Ciao 😀<br />
+Aaditya</p>
+<!--kg-card-end: html-->
+            </div>
+          </div>
+        </div>
+        <section class="m-author no-subscribers">
+          <div class="m-author__content">
+            <div class="m-author__picture">
+              <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-author-picture" aria-label="Author picture">
+                <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+              </a>
+            </div>
+            <div class="m-author__info">
+              <h4 class="m-author__name">
+                <a href="https://sparker0i.me/blog/author/sparker0i/">Aaditya Menon</a>
+              </h4>
+              <p class="m-author__bio">Little World</p>
+              <ul class="m-author-links">
+                <li>
+                  <a href="https://twitter.com/@Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="m-recommended">
+          <div class="l-wrapper in-recommended">
+            <h3 class="m-section-title in-recommended">Recommended for you</h3>
+            <div class="m-recommended-articles">
+              <div class="m-recommended-slider js-recommended-articles">
+                
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-2fa tag-git tag-github tag-linux tag-programming tag-repo tag-solving-technical tag-two-factor-authentication">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2018/03/shutterstock_641960737.jpg">
+      <a href="/configure-2-factor-authentication-for-github/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/2fa/" class="m-article-card__tag">2FA</a>
+      <a href="/configure-2-factor-authentication-for-github/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Configure 2-Factor Authentication for Github</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>2 years ago</span>
+          <span>&bull;</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-android tag-hardware-button tag-modifications tag-redmi-note-3 tag-solving-technical tag-tweaking">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/11/navbar.jpg">
+      <a href="/disable-hardware-buttons-redmi-note-3/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/android/" class="m-article-card__tag">Android</a>
+      <a href="/disable-hardware-buttons-redmi-note-3/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">How To Disable Hardware Buttons in Redmi Note 3</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>2 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-android tag-assignment tag-java tag-programming tag-simple-weather tag-workshop">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/11/app-icon.png">
+      <a href="/simple-weather-now-in-the-google-play-store/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/android/" class="m-article-card__tag">Android</a>
+      <a href="/simple-weather-now-in-the-google-play-store/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Simple Weather - now in the Google Play Store</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+</div>
+
+
+
+    
+<div class="m-search js-search">
+  <button class="m-icon-button outlined as-close-search js-close-search" aria-label="Close search">
+    <span class="icon-close"></span>
+  </button>
+  <div class="m-search__content">
+    <form class="m-search__form">
+      <fieldset>
+        <span class="icon-search m-search-icon"></span>
+        <input type="text" class="m-input in-search js-input-search" placeholder="Type to search" aria-label="Type to search">
+      </fieldset>
+    </form>
+    <div class="js-search-results hide"></div>
+    <p class="m-not-found align-center hide js-no-results">
+      No results for your search, try something different.
+    </p>
+  </div>
+</div>
+
+    
+<footer class="m-footer">
+  <div class="m-footer__content">
+    <p class="m-footer-copyright">
+      <span>Sparker0i&#x27;s Blog &copy; 2019</span>
+      <span>&nbsp; &bull; &nbsp;</span>
+      <span>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+    </p>
+
+    <nav class="m-footer-social">
+        <a href="https://twitter.com/Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+          <span class="icon-twitter"></span>
+        </a>
+    </nav>
+    <p class="m-footer-copyright jslicense">
+      <a href="/assets/html/javascript.html?v=de61dba188" rel="jslicense">JavaScript license information</a>
+    </p>
+  </div>
+</footer>
+
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+    <script defer src="https://unpkg.com/@tryghost/content-api@1.2.7/umd/content-api.min.js"></script>
+    <script defer src="/assets/js/manifest.js?v=de61dba188"></script>
+    <script defer src="/assets/js/vendor.js?v=de61dba188"></script>
+    <script defer src="/assets/js/app.js?v=de61dba188"></script>
+
+      <script defer src="/assets/js/post.js?v=de61dba188"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Announcing Simple Weather v2.0</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css?v=de61dba188" media="screen" />
+
+      <style>
+    .m-hero__picture {
+      background-image: url(/content/images/size/w2000/wordpress/2017/11/weather2.png);
+    }
+  
+    @media(max-width: 1000px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w1000/wordpress/2017/11/weather2.png);
+      }
+    }
+  
+    @media(max-width: 600px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w600/wordpress/2017/11/weather2.png);
+      }
+    }
+  </style>
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://sparker0i.me/blog/simple-weather-v2-now-available/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://sparker0i.me/blog/simple-weather-v2-now-available/amp/" />
+    
+    <meta property="og:site_name" content="Sparker0i&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Announcing Simple Weather v2.0" />
+    <meta property="og:description" content="Hello there. Wishing all a Merry Christmas and a Happy new year. Today I’m
+writing this blog post to announce the second release of my Simple Weather app.
+The app was started out as an assignment to the CS With Android Workshop that
+was held in our college last summer. The app had an intuitive and beautiful UI.
+
+This second release carries on the same UI from the previous release, with
+improvements to the app overall. Before I start, here is a stat on the number of
+downloads till date (until the" />
+    <meta property="og:url" content="https://sparker0i.me/blog/simple-weather-v2-now-available/" />
+    <meta property="og:image" content="https://sparker0i.me/blog/content/images/wordpress/2017/11/weather2.png" />
+    <meta property="article:published_time" content="2016-12-12T10:10:31.000Z" />
+    <meta property="article:modified_time" content="2019-11-20T18:00:18.000Z" />
+    <meta property="article:tag" content="Android" />
+    <meta property="article:tag" content="Programming" />
+    <meta property="article:tag" content="Simple Weather" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Announcing Simple Weather v2.0" />
+    <meta name="twitter:description" content="Hello there. Wishing all a Merry Christmas and a Happy new year. Today I’m
+writing this blog post to announce the second release of my Simple Weather app.
+The app was started out as an assignment to the CS With Android Workshop that
+was held in our college last summer. The app had an intuitive and beautiful UI.
+
+This second release carries on the same UI from the previous release, with
+improvements to the app overall. Before I start, here is a stat on the number of
+downloads till date (until the" />
+    <meta name="twitter:url" content="https://sparker0i.me/blog/simple-weather-v2-now-available/" />
+    <meta name="twitter:image" content="https://sparker0i.me/blog/content/images/wordpress/2017/11/weather2.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Aaditya Menon" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Android, Programming, Simple Weather" />
+    <meta name="twitter:site" content="@Sparker0i" />
+    <meta name="twitter:creator" content="@Sparker0i" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="500" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Sparker0i&#x27;s Blog",
+        "logo": "https://sparker0i.me/blog/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Aaditya Menon",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s=512&d=mm&r=g",
+            "width": 512,
+            "height": 512
+        },
+        "url": "https://sparker0i.me/blog/author/sparker0i/",
+        "sameAs": [
+            "https://twitter.com/Sparker0i"
+        ]
+    },
+    "headline": "Announcing Simple Weather v2.0",
+    "url": "https://sparker0i.me/blog/simple-weather-v2-now-available/",
+    "datePublished": "2016-12-12T10:10:31.000Z",
+    "dateModified": "2019-11-20T18:00:18.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://sparker0i.me/blog/content/images/wordpress/2017/11/weather2.png",
+        "width": 1024,
+        "height": 500
+    },
+    "keywords": "Android, Programming, Simple Weather",
+    "description": "Hello there. Wishing all a Merry Christmas and a Happy new year. Today I’m\nwriting this blog post to announce the second release of my Simple Weather app.\nThe app was started out as an assignment to the CS With Android Workshop that\nwas held in our college last summer. The app had an intuitive and beautiful UI.\n\nThis second release carries on the same UI from the previous release, with\nimprovements to the app overall. Before I start, here is a stat on the number of\ndownloads till date (until the",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sparker0i.me/blog/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.0" />
+    <link rel="alternate" type="application/rss+xml" title="Sparker0i&#x27;s Blog" href="https://sparker0i.me/blog/rss/" />
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      const ghostHost = "https://sparker0i.me/blog"
+      // @license-end
+    </script>
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      WebFontConfig = {
+        google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
+      };
+
+      (function (d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+      // @license-end
+    </script>
+  </head>
+  <body class="post-template tag-android tag-programming tag-simple-weather">
+    
+
+<div class="main-wrap">
+  
+  <header class="m-header with-picture js-header">
+  <div class="m-mobile-topbar" data-aos="fade-down">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+      <span class="icon-menu"></span>
+    </button>
+      <a href="https://sparker0i.me/blog" class="m-logo in-mobile-topbar">
+        <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+      </a>
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
+      <span class="icon-search"></span>
+    </button>
+  </div>
+
+  <div class="m-menu js-menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+      <span class="icon-close"></span>
+    </button>
+    <div class="m-menu__main" data-aos="fade-down">
+      <div class="l-wrapper">
+        <div class="m-nav">
+          <nav class="m-nav__left">
+            <ul role="submenu">
+                <li class="only-desktop" role="menuitem">
+                  <a href="https://sparker0i.me/blog" class="m-logo">
+                    <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+                  </a>
+                </li>
+              <li role="menuitem" class="js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
+                  <span class="icon-more"></span>
+                </button>
+                <div class="m-submenu js-submenu">
+                  <div class="l-wrapper in-submenu">
+                    <section class="m-recent-articles">
+                      <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+                      <div class="js-recent-articles">
+                        <div>
+                          <a href="/ipl-2020-auction-experience-with-rcb/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/2019/12/77062915_620803191999653_2243580465715061965_n.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">IPL 2020 Auction experience with RCB</h3>
+                            <span class="m-recent-article__date">8 minutes ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/mysql-installation-inside-docker-on-mac/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2019/03/1_fqwE_Sk2pCO5orZTRoivgg.png"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">MySQL installation inside Docker on Mac</h3>
+                            <span class="m-recent-article__date">9 months ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/ipl-auction-strategies-analysis-and-likely-xi-prediction/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/12/dc-Cover-omhjdhpamrm6sqm474hartk7j5-20180527190509.Medi_.jpeg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">IPL Auction Strategies: Analysis and Likely XI Prediction</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/nokia-7-plus-phone-android-one-review/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/09/nokia-7-plus-mwc-launch.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">Nokia 7 Plus review: The best Android One Smartphone?</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="m-tags">
+                      <h3 class="m-submenu-title">Tags</h3>
+                      <ul>
+                        <li>
+                          <a href="/tag/2fa/">2FA</a>
+                        </li>
+                        <li>
+                          <a href="/tag/3-years/">3 years</a>
+                        </li>
+                        <li>
+                          <a href="/tag/adb/">ADB</a>
+                        </li>
+                        <li>
+                          <a href="/tag/asus/">ASUS</a>
+                        </li>
+                        <li>
+                          <a href="/tag/all-rounder/">All Rounder</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android/">Android</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-one/">Android One</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-project/">Android Project</a>
+                        </li>
+                        <li>
+                          <a href="/tag/assignment/">Assignment</a>
+                        </li>
+                        <li>
+                          <a href="/tag/csk/">CSK</a>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="m-nav__right">
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+              <span class="icon-search"></span>
+            </button>
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle dark mode">
+              <input type="checkbox" class="js-toggle-darkmode">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  
+
+  <section class="m-hero with-picture" data-aos="fade">
+    <div class="m-hero__picture in-post"></div>
+  </section>
+  
+  <main>
+    <article>
+      <div class="l-content in-post">
+        <div class="l-wrapper in-post  js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
+          <div class="l-post-content js-progress-content">
+            <header class="m-heading">
+              <h1 class="m-heading__title in-post">Announcing Simple Weather v2.0</h1>
+              <div class="m-heading__meta">
+                <a href="https://sparker0i.me/blog/tag/android/" class="m-heading__meta__tag">Android</a>
+                <span class="m-heading__meta__divider">&bull;</span>
+                <span class="m-heading__meta__time">Dec 12, 2016</span>
+              </div>
+            </header>
+            <div class="pos-relative js-post-content">
+              <div class="m-share">
+                <div class="m-share__content js-sticky">
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=https://sparker0i.me/blog/simple-weather-v2-now-available/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
+                    <span class="icon-facebook"></span>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?text=Announcing%20Simple%20Weather%20v2.0&url=https://sparker0i.me/blog/simple-weather-v2-now-available/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
+                    <span class="icon-arrow-top"></span>
+                    <svg>
+                      <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <!--kg-card-begin: html--><p>Hello there. Wishing all a Merry Christmas and a Happy new year. Today I&#8217;m writing this blog post to announce the second release of my Simple Weather app. The app was started out as an assignment to the CS With Android Workshop that was held in our college last summer. The app had an intuitive and beautiful UI.</p>
+<p>This second release carries on the same UI from the previous release, with improvements to the app overall. Before I start, here is a stat on the number of downloads till date (until the moment I pushed the app update).</p>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/stat.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/stat-576x1024.png" alt="" width="576" height="1024" class="alignnone size-large wp-image-122" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/stat-576x1024.png 576w, https://sparker0i.me/blog/content/images/wordpress/2017/11/stat-169x300.png 169w, https://sparker0i.me/blog/content/images/wordpress/2017/11/stat-768x1365.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/11/stat.png 1080w" sizes="(max-width: 576px) 100vw, 576px" /></a></p>
+<p>Okay, starting off, you will see a new icon in the launcher. I have decided to take a Circular Icon approach for my icon for all versions of Android (unlike Android 7.1 where this is offered as a roundIcon option) :</p>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/icon.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/icon-569x1024.png" alt="" width="569" height="1024" class="alignnone size-large wp-image-123" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/icon-569x1024.png 569w, https://sparker0i.me/blog/content/images/wordpress/2017/11/icon-167x300.png 167w, https://sparker0i.me/blog/content/images/wordpress/2017/11/icon-768x1382.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/11/icon.png 1600w" sizes="(max-width: 569px) 100vw, 569px" /></a></p>
+<p>When you start the app, the first thing you will notice is change of app colors (Blue-Red, unlike Purple-Pink from the previous release) and a floating action bar icon for opening up the search box.</p>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/home.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/home-569x1024.png" alt="" width="569" height="1024" class="alignnone size-large wp-image-124" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/home-569x1024.png 569w, https://sparker0i.me/blog/content/images/wordpress/2017/11/home-167x300.png 167w, https://sparker0i.me/blog/content/images/wordpress/2017/11/home-768x1382.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/11/home.png 1600w" sizes="(max-width: 569px) 100vw, 569px" /></a></p>
+<p>In the previous update of the app, whenever you clicked on the City Name or the Weather Icon, the app used to display a Dialog Box showing information in an unsorted way &#8211; differently on different devices. This thing has changed in v2.0 . Now when you click on either of them, you will be shown a Snackbar, which tends to be a more modern, &#8220;Material&#8221;istic approach to show information.</p>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/snack.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/snack-569x1024.png" alt="" width="569" height="1024" class="alignnone size-large wp-image-125" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/snack-569x1024.png 569w, https://sparker0i.me/blog/content/images/wordpress/2017/11/snack-167x300.png 167w, https://sparker0i.me/blog/content/images/wordpress/2017/11/snack-768x1382.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/11/snack.png 1600w" sizes="(max-width: 569px) 100vw, 569px" /></a></p>
+<p>In a similar fashion, when you clicked to display a Day&#8217;s information, you would be presented with a dialog box, which had rendering problems, just like the one I had mentioned above. This thing is also changing with v2.0 . Now when you click to display a day&#8217;s information, you will be taken to a new screen which shows information as icons and texts. Click on any one of them to reveal what that icon/text is for. This will also be shown as a Snackbar.</p>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/detail.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/detail-569x1024.png" alt="" width="569" height="1024" class="alignnone size-large wp-image-126" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/detail-569x1024.png 569w, https://sparker0i.me/blog/content/images/wordpress/2017/11/detail-167x300.png 167w, https://sparker0i.me/blog/content/images/wordpress/2017/11/detail-768x1382.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/11/detail.png 1600w" sizes="(max-width: 569px) 100vw, 569px" /></a></p>
+<p>Another thing you&#8217;ll notice in the main app is that icon near the 3 dot menu. That is the location icon. Click on it to detect your current location, and the app will display data accordingly.</p>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/location.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/location-569x1024.png" alt="" width="569" height="1024" class="alignnone size-large wp-image-127" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/location-569x1024.png 569w, https://sparker0i.me/blog/content/images/wordpress/2017/11/location-167x300.png 167w, https://sparker0i.me/blog/content/images/wordpress/2017/11/location-768x1382.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/11/location.png 1600w" sizes="(max-width: 569px) 100vw, 569px" /></a></p>
+<p>If you are using Android 6.0 and above, you&#8217;ll be presented with a dialog box to enable location permission. If you click on that location icon on the action bar, you will need to accept the permission for the action to continue.</p>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/permission.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/permission-569x1024.png" alt="" width="569" height="1024" class="alignnone size-large wp-image-128" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/permission-569x1024.png 569w, https://sparker0i.me/blog/content/images/wordpress/2017/11/permission-167x300.png 167w, https://sparker0i.me/blog/content/images/wordpress/2017/11/permission-768x1382.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/11/permission.png 1600w" sizes="(max-width: 569px) 100vw, 569px" /></a></p>
+<p>There&#8217;s one more new thing in the app. You now have the ability to search for a city based on its ZIP Code, or what we call in India as the PIN Code. That is what we call an improvement to an existing thing.</p>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/search.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/search-569x1024.png" alt="" width="569" height="1024" class="alignnone size-large wp-image-129" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/search-569x1024.png 569w, https://sparker0i.me/blog/content/images/wordpress/2017/11/search-167x300.png 167w, https://sparker0i.me/blog/content/images/wordpress/2017/11/search-768x1382.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/11/search.png 1600w" sizes="(max-width: 569px) 100vw, 569px" /></a></p>
+<p>The app is now rolling all over the globe. Make sure that you download the app today.</p>
+<p><a href='https://play.google.com/store/apps/details?id=com.a5corp.weather&#038;utm_source=global_co&#038;utm_medium=prtnr&#038;utm_content=Mar2515&#038;utm_campaign=PartBadge&#038;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a></p>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/about.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/about-569x1024.png" alt="" width="569" height="1024" class="alignnone size-large wp-image-130" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/about-569x1024.png 569w, https://sparker0i.me/blog/content/images/wordpress/2017/11/about-167x300.png 167w, https://sparker0i.me/blog/content/images/wordpress/2017/11/about-768x1382.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/11/about.png 1600w" sizes="(max-width: 569px) 100vw, 569px" /></a></p>
+<p>Until another blog post, Ciao.</p>
+<!--kg-card-end: html-->
+            </div>
+          </div>
+        </div>
+        <section class="m-author no-subscribers">
+          <div class="m-author__content">
+            <div class="m-author__picture">
+              <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-author-picture" aria-label="Author picture">
+                <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+              </a>
+            </div>
+            <div class="m-author__info">
+              <h4 class="m-author__name">
+                <a href="https://sparker0i.me/blog/author/sparker0i/">Aaditya Menon</a>
+              </h4>
+              <p class="m-author__bio">Little World</p>
+              <ul class="m-author-links">
+                <li>
+                  <a href="https://twitter.com/@Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="m-recommended">
+          <div class="l-wrapper in-recommended">
+            <h3 class="m-section-title in-recommended">Recommended for you</h3>
+            <div class="m-recommended-articles">
+              <div class="m-recommended-slider js-recommended-articles">
+                
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-2fa tag-git tag-github tag-linux tag-programming tag-repo tag-solving-technical tag-two-factor-authentication">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2018/03/shutterstock_641960737.jpg">
+      <a href="/configure-2-factor-authentication-for-github/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/2fa/" class="m-article-card__tag">2FA</a>
+      <a href="/configure-2-factor-authentication-for-github/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Configure 2-Factor Authentication for Github</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>2 years ago</span>
+          <span>&bull;</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-android tag-assignment tag-java tag-programming tag-simple-weather tag-workshop">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/11/pp.jpg">
+      <a href="/how-it-all-began/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/android/" class="m-article-card__tag">Android</a>
+      <a href="/how-it-all-began/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">How It All Began - The Journey To Android App Development</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>4 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-android tag-hardware-button tag-modifications tag-redmi-note-3 tag-solving-technical tag-tweaking">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/11/navbar.jpg">
+      <a href="/disable-hardware-buttons-redmi-note-3/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/android/" class="m-article-card__tag">Android</a>
+      <a href="/disable-hardware-buttons-redmi-note-3/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">How To Disable Hardware Buttons in Redmi Note 3</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>2 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+</div>
+
+
+
+    
+<div class="m-search js-search">
+  <button class="m-icon-button outlined as-close-search js-close-search" aria-label="Close search">
+    <span class="icon-close"></span>
+  </button>
+  <div class="m-search__content">
+    <form class="m-search__form">
+      <fieldset>
+        <span class="icon-search m-search-icon"></span>
+        <input type="text" class="m-input in-search js-input-search" placeholder="Type to search" aria-label="Type to search">
+      </fieldset>
+    </form>
+    <div class="js-search-results hide"></div>
+    <p class="m-not-found align-center hide js-no-results">
+      No results for your search, try something different.
+    </p>
+  </div>
+</div>
+
+    
+<footer class="m-footer">
+  <div class="m-footer__content">
+    <p class="m-footer-copyright">
+      <span>Sparker0i&#x27;s Blog &copy; 2019</span>
+      <span>&nbsp; &bull; &nbsp;</span>
+      <span>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+    </p>
+
+    <nav class="m-footer-social">
+        <a href="https://twitter.com/Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+          <span class="icon-twitter"></span>
+        </a>
+    </nav>
+    <p class="m-footer-copyright jslicense">
+      <a href="/assets/html/javascript.html?v=de61dba188" rel="jslicense">JavaScript license information</a>
+    </p>
+  </div>
+</footer>
+
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+    <script defer src="https://unpkg.com/@tryghost/content-api@1.2.7/umd/content-api.min.js"></script>
+    <script defer src="/assets/js/manifest.js?v=de61dba188"></script>
+    <script defer src="/assets/js/vendor.js?v=de61dba188"></script>
+    <script defer src="/assets/js/app.js?v=de61dba188"></script>
+
+      <script defer src="/assets/js/post.js?v=de61dba188"></script>
+
+
+    
+  </body>
+</html>

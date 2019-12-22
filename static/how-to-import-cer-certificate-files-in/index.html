@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>How to import .cer certificate in Chrome on Linux</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css?v=de61dba188" media="screen" />
+
+      <style>
+    .m-hero__picture {
+      background-image: url(/content/images/size/w2000/wordpress/2016/07/chrome.png);
+    }
+  
+    @media(max-width: 1000px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w1000/wordpress/2016/07/chrome.png);
+      }
+    }
+  
+    @media(max-width: 600px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w600/wordpress/2016/07/chrome.png);
+      }
+    }
+  </style>
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://sparker0i.me/blog/how-to-import-cer-certificate-files-in/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://sparker0i.me/blog/how-to-import-cer-certificate-files-in/amp/" />
+    
+    <meta property="og:site_name" content="Sparker0i&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to import .cer certificate in Chrome on Linux" />
+    <meta property="og:description" content="I have now started my journey as a second year student at Amrita Vishwa
+Vidyapeetham, Amritapuri. This is the first of the posts in the Solving
+Technical series. At this point of time, I’ve registered for the Wi-Fi provided
+here. At first they tell us to import a .cer file in the browser we use. But the
+problem lies within the fact that, Google Chrome on Linux does not have a
+functionality to import .cer files, unlike Firefox. Instead we can only import
+.crt files in Chrome Browser. So I’ll guid" />
+    <meta property="og:url" content="https://sparker0i.me/blog/how-to-import-cer-certificate-files-in/" />
+    <meta property="og:image" content="https://sparker0i.me/blog/content/images/wordpress/2016/07/chrome.png" />
+    <meta property="article:published_time" content="2016-07-28T12:55:18.000Z" />
+    <meta property="article:modified_time" content="2017-11-04T01:05:36.000Z" />
+    <meta property="article:tag" content="Chrome" />
+    <meta property="article:tag" content="Internet" />
+    <meta property="article:tag" content="Linux" />
+    <meta property="article:tag" content="Solving-Technical" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to import .cer certificate in Chrome on Linux" />
+    <meta name="twitter:description" content="I have now started my journey as a second year student at Amrita Vishwa
+Vidyapeetham, Amritapuri. This is the first of the posts in the Solving
+Technical series. At this point of time, I’ve registered for the Wi-Fi provided
+here. At first they tell us to import a .cer file in the browser we use. But the
+problem lies within the fact that, Google Chrome on Linux does not have a
+functionality to import .cer files, unlike Firefox. Instead we can only import
+.crt files in Chrome Browser. So I’ll guid" />
+    <meta name="twitter:url" content="https://sparker0i.me/blog/how-to-import-cer-certificate-files-in/" />
+    <meta name="twitter:image" content="https://sparker0i.me/blog/content/images/wordpress/2016/07/chrome.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Aaditya Menon" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Chrome, Internet, Linux, Solving-Technical" />
+    <meta name="twitter:site" content="@Sparker0i" />
+    <meta name="twitter:creator" content="@Sparker0i" />
+    <meta property="og:image:width" content="823" />
+    <meta property="og:image:height" content="535" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Sparker0i&#x27;s Blog",
+        "logo": "https://sparker0i.me/blog/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Aaditya Menon",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s=512&d=mm&r=g",
+            "width": 512,
+            "height": 512
+        },
+        "url": "https://sparker0i.me/blog/author/sparker0i/",
+        "sameAs": [
+            "https://twitter.com/Sparker0i"
+        ]
+    },
+    "headline": "How to import .cer certificate in Chrome on Linux",
+    "url": "https://sparker0i.me/blog/how-to-import-cer-certificate-files-in/",
+    "datePublished": "2016-07-28T12:55:18.000Z",
+    "dateModified": "2017-11-04T01:05:36.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://sparker0i.me/blog/content/images/wordpress/2016/07/chrome.png",
+        "width": 823,
+        "height": 535
+    },
+    "keywords": "Chrome, Internet, Linux, Solving-Technical",
+    "description": "I have now started my journey as a second year student at Amrita Vishwa\nVidyapeetham, Amritapuri. This is the first of the posts in the Solving\nTechnical series. At this point of time, I’ve registered for the Wi-Fi provided\nhere. At first they tell us to import a .cer file in the browser we use. But the\nproblem lies within the fact that, Google Chrome on Linux does not have a\nfunctionality to import .cer files, unlike Firefox. Instead we can only import\n.crt files in Chrome Browser. So I’ll guid",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sparker0i.me/blog/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.0" />
+    <link rel="alternate" type="application/rss+xml" title="Sparker0i&#x27;s Blog" href="https://sparker0i.me/blog/rss/" />
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      const ghostHost = "https://sparker0i.me/blog"
+      // @license-end
+    </script>
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      WebFontConfig = {
+        google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
+      };
+
+      (function (d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+      // @license-end
+    </script>
+  </head>
+  <body class="post-template tag-chrome tag-internet tag-linux tag-solving-technical">
+    
+
+<div class="main-wrap">
+  
+  <header class="m-header with-picture js-header">
+  <div class="m-mobile-topbar" data-aos="fade-down">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+      <span class="icon-menu"></span>
+    </button>
+      <a href="https://sparker0i.me/blog" class="m-logo in-mobile-topbar">
+        <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+      </a>
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
+      <span class="icon-search"></span>
+    </button>
+  </div>
+
+  <div class="m-menu js-menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+      <span class="icon-close"></span>
+    </button>
+    <div class="m-menu__main" data-aos="fade-down">
+      <div class="l-wrapper">
+        <div class="m-nav">
+          <nav class="m-nav__left">
+            <ul role="submenu">
+                <li class="only-desktop" role="menuitem">
+                  <a href="https://sparker0i.me/blog" class="m-logo">
+                    <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+                  </a>
+                </li>
+              <li role="menuitem" class="js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
+                  <span class="icon-more"></span>
+                </button>
+                <div class="m-submenu js-submenu">
+                  <div class="l-wrapper in-submenu">
+                    <section class="m-recent-articles">
+                      <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+                      <div class="js-recent-articles">
+                        <div>
+                          <a href="/ipl-2020-auction-experience-with-rcb/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/2019/12/77062915_620803191999653_2243580465715061965_n.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">IPL 2020 Auction experience with RCB</h3>
+                            <span class="m-recent-article__date">8 minutes ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/mysql-installation-inside-docker-on-mac/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2019/03/1_fqwE_Sk2pCO5orZTRoivgg.png"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">MySQL installation inside Docker on Mac</h3>
+                            <span class="m-recent-article__date">9 months ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/ipl-auction-strategies-analysis-and-likely-xi-prediction/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/12/dc-Cover-omhjdhpamrm6sqm474hartk7j5-20180527190509.Medi_.jpeg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">IPL Auction Strategies: Analysis and Likely XI Prediction</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/nokia-7-plus-phone-android-one-review/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/09/nokia-7-plus-mwc-launch.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">Nokia 7 Plus review: The best Android One Smartphone?</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="m-tags">
+                      <h3 class="m-submenu-title">Tags</h3>
+                      <ul>
+                        <li>
+                          <a href="/tag/2fa/">2FA</a>
+                        </li>
+                        <li>
+                          <a href="/tag/3-years/">3 years</a>
+                        </li>
+                        <li>
+                          <a href="/tag/adb/">ADB</a>
+                        </li>
+                        <li>
+                          <a href="/tag/asus/">ASUS</a>
+                        </li>
+                        <li>
+                          <a href="/tag/all-rounder/">All Rounder</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android/">Android</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-one/">Android One</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-project/">Android Project</a>
+                        </li>
+                        <li>
+                          <a href="/tag/assignment/">Assignment</a>
+                        </li>
+                        <li>
+                          <a href="/tag/csk/">CSK</a>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="m-nav__right">
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+              <span class="icon-search"></span>
+            </button>
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle dark mode">
+              <input type="checkbox" class="js-toggle-darkmode">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  
+
+  <section class="m-hero with-picture" data-aos="fade">
+    <div class="m-hero__picture in-post"></div>
+  </section>
+  
+  <main>
+    <article>
+      <div class="l-content in-post">
+        <div class="l-wrapper in-post  js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
+          <div class="l-post-content js-progress-content">
+            <header class="m-heading">
+              <h1 class="m-heading__title in-post">How to import .cer certificate in Chrome on Linux</h1>
+              <div class="m-heading__meta">
+                <a href="https://sparker0i.me/blog/tag/chrome/" class="m-heading__meta__tag">Chrome</a>
+                <span class="m-heading__meta__divider">&bull;</span>
+                <span class="m-heading__meta__time">Jul 28, 2016</span>
+              </div>
+            </header>
+            <div class="pos-relative js-post-content">
+              <div class="m-share">
+                <div class="m-share__content js-sticky">
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=https://sparker0i.me/blog/how-to-import-cer-certificate-files-in/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
+                    <span class="icon-facebook"></span>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?text=How%20to%20import%20.cer%20certificate%20in%20Chrome%20on%20Linux&url=https://sparker0i.me/blog/how-to-import-cer-certificate-files-in/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
+                    <span class="icon-arrow-top"></span>
+                    <svg>
+                      <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <!--kg-card-begin: html--><p>I have now started my journey as a second year student at Amrita Vishwa Vidyapeetham, Amritapuri. This is the first of the posts in the Solving Technical series. At this point of time, I&#8217;ve registered for the Wi-Fi provided here. At first they tell us to import a .cer file in the browser we use. But the problem lies within the fact that, Google Chrome on Linux does not have a functionality to import .cer files, unlike Firefox. Instead we can only import .crt files in Chrome Browser. So I&#8217;ll guide you in importing a .cer file in Chrome.</p>
+<h3>PREREQUISITES</h3>
+<ol>
+<li>A .cer file</li>
+<li>Mozilla Firefox v40+ on Linux (or any browser based on it)</li>
+<li>Google Chrome v47+ on Linux (or any other browser based on it)</li>
+</ol>
+<h3>GETTING STARTED</h3>
+<p>First of all download the .cer file. In my case I downloaded the Fortinet certificate file from my campus. Then we have to import this .cer file in Firefox first. To do this:</p>
+<ul>
+<li>Open Firefox from your shell Launcher or type firefox in terminal</li>
+<li>Then click on the Hamburger menu on the top right corner of Firefox. Select the Preferences Option</li>
+<li>Go to Advanced section</li>
+<li>Select the Certificates sub-menu. Click on the &#8220;View Certificates&#8221; Button. </li>
+<li>Certificate Manager window will pop up.</li>
+<li>Go to Authorities sub-menu. Select Import; then navigate to the folder containing your .cer File and then import it.</li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/10/firefox-settings.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/10/firefox-settings.png" alt="" width="1366" height="768" class="alignnone size-full wp-image-46" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/10/firefox-settings.png 1366w, https://sparker0i.me/blog/content/images/wordpress/2017/10/firefox-settings-300x169.png 300w, https://sparker0i.me/blog/content/images/wordpress/2017/10/firefox-settings-768x432.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/10/firefox-settings-1024x576.png 1024w" sizes="(max-width: 1366px) 100vw, 1366px" /></a></p>
+<ul>
+<li>After it gets imported, click on that Certificate file you imported and then click export. You must now see something with .crt extension in the Save As dialog box.</li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/10/save-as.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/10/save-as.png" alt="" width="1366" height="768" class="alignnone size-full wp-image-45" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/10/save-as.png 1366w, https://sparker0i.me/blog/content/images/wordpress/2017/10/save-as-300x169.png 300w, https://sparker0i.me/blog/content/images/wordpress/2017/10/save-as-768x432.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/10/save-as-1024x576.png 1024w" sizes="(max-width: 1366px) 100vw, 1366px" /></a></p>
+<ul>
+<li>Give a name you like to the certificate (PS. Dont forget the .crt extension)</li>
+<li>Then Open Google Chrome and click on the 3 dots in the upper right corner and go to Settings</li>
+<li>Click On Show Advanced Settings</li>
+<li>Scroll down to the HTTPS/SSL section and click on the Manage Certificates button.</li>
+<li>Go to the Authorities tab. Select Import and then choose your .crt file</li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/10/open-dialog.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/10/open-dialog.png" alt="" width="1366" height="768" class="alignnone size-full wp-image-44" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/10/open-dialog.png 1366w, https://sparker0i.me/blog/content/images/wordpress/2017/10/open-dialog-300x169.png 300w, https://sparker0i.me/blog/content/images/wordpress/2017/10/open-dialog-768x432.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/10/open-dialog-1024x576.png 1024w" sizes="(max-width: 1366px) 100vw, 1366px" /></a></p>
+<ul>
+<li>Depending on your needs, select the options from below. I had to choose only the first one, as per the instructions from my College Wi-Fi Registration Instructions.</li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/10/trust.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/10/trust.png" alt="" width="1366" height="768" class="alignnone size-full wp-image-43" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/10/trust.png 1366w, https://sparker0i.me/blog/content/images/wordpress/2017/10/trust-300x169.png 300w, https://sparker0i.me/blog/content/images/wordpress/2017/10/trust-768x432.png 768w, https://sparker0i.me/blog/content/images/wordpress/2017/10/trust-1024x576.png 1024w" sizes="(max-width: 1366px) 100vw, 1366px" /></a></p>
+<p>Ta-da!!!! You have now imported a .cer file in Google Chrome.</p>
+<!--kg-card-end: html-->
+            </div>
+          </div>
+        </div>
+        <section class="m-author no-subscribers">
+          <div class="m-author__content">
+            <div class="m-author__picture">
+              <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-author-picture" aria-label="Author picture">
+                <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+              </a>
+            </div>
+            <div class="m-author__info">
+              <h4 class="m-author__name">
+                <a href="https://sparker0i.me/blog/author/sparker0i/">Aaditya Menon</a>
+              </h4>
+              <p class="m-author__bio">Little World</p>
+              <ul class="m-author-links">
+                <li>
+                  <a href="https://twitter.com/@Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="m-recommended">
+          <div class="l-wrapper in-recommended">
+            <h3 class="m-section-title in-recommended">Recommended for you</h3>
+            <div class="m-recommended-articles">
+              <div class="m-recommended-slider js-recommended-articles">
+                
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-2fa tag-git tag-github tag-linux tag-programming tag-repo tag-solving-technical tag-two-factor-authentication">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2018/03/shutterstock_641960737.jpg">
+      <a href="/configure-2-factor-authentication-for-github/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/2fa/" class="m-article-card__tag">2FA</a>
+      <a href="/configure-2-factor-authentication-for-github/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Configure 2-Factor Authentication for Github</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>2 years ago</span>
+          <span>&bull;</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-android tag-hardware-button tag-modifications tag-redmi-note-3 tag-solving-technical tag-tweaking">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/11/navbar.jpg">
+      <a href="/disable-hardware-buttons-redmi-note-3/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/android/" class="m-article-card__tag">Android</a>
+      <a href="/disable-hardware-buttons-redmi-note-3/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">How To Disable Hardware Buttons in Redmi Note 3</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>2 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-intel tag-linux tag-skylake tag-solving-technical tag-vlc">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/11/VLC.png">
+      <a href="/fix-vlc-video-always-overlay-linux/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/intel/" class="m-article-card__tag">Intel</a>
+      <a href="/fix-vlc-video-always-overlay-linux/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Fix VLC Video Always Overlay on Linux</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>1 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+</div>
+
+
+
+    
+<div class="m-search js-search">
+  <button class="m-icon-button outlined as-close-search js-close-search" aria-label="Close search">
+    <span class="icon-close"></span>
+  </button>
+  <div class="m-search__content">
+    <form class="m-search__form">
+      <fieldset>
+        <span class="icon-search m-search-icon"></span>
+        <input type="text" class="m-input in-search js-input-search" placeholder="Type to search" aria-label="Type to search">
+      </fieldset>
+    </form>
+    <div class="js-search-results hide"></div>
+    <p class="m-not-found align-center hide js-no-results">
+      No results for your search, try something different.
+    </p>
+  </div>
+</div>
+
+    
+<footer class="m-footer">
+  <div class="m-footer__content">
+    <p class="m-footer-copyright">
+      <span>Sparker0i&#x27;s Blog &copy; 2019</span>
+      <span>&nbsp; &bull; &nbsp;</span>
+      <span>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+    </p>
+
+    <nav class="m-footer-social">
+        <a href="https://twitter.com/Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+          <span class="icon-twitter"></span>
+        </a>
+    </nav>
+    <p class="m-footer-copyright jslicense">
+      <a href="/assets/html/javascript.html?v=de61dba188" rel="jslicense">JavaScript license information</a>
+    </p>
+  </div>
+</footer>
+
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+    <script defer src="https://unpkg.com/@tryghost/content-api@1.2.7/umd/content-api.min.js"></script>
+    <script defer src="/assets/js/manifest.js?v=de61dba188"></script>
+    <script defer src="/assets/js/vendor.js?v=de61dba188"></script>
+    <script defer src="/assets/js/app.js?v=de61dba188"></script>
+
+      <script defer src="/assets/js/post.js?v=de61dba188"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Enable Natural Scrolling for Trackpads using libinput</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css?v=de61dba188" media="screen" />
+
+      <style>
+    .m-hero__picture {
+      background-image: url(/content/images/size/w2000/wordpress/2018/05/gnome-touchpad-featured-2.jpg);
+    }
+  
+    @media(max-width: 1000px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w1000/wordpress/2018/05/gnome-touchpad-featured-2.jpg);
+      }
+    }
+  
+    @media(max-width: 600px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w600/wordpress/2018/05/gnome-touchpad-featured-2.jpg);
+      }
+    }
+  </style>
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://sparker0i.me/blog/enable-natural-scrolling-using-libinput/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://sparker0i.me/blog/enable-natural-scrolling-using-libinput/amp/" />
+    
+    <meta property="og:site_name" content="Sparker0i&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Enable Natural Scrolling for Trackpads using libinput" />
+    <meta property="og:description" content="I had recently upgraded to Ubuntu 18.04 and installed Unity back. After
+installing, I found that Reverse Scrolling/Natural Scrolling option was missing
+from Settings in Unity, while it was available in GNOME settings. This was
+pretty much a deal breaker for me, so I had to find a way to enable reverse
+scrolling via some GUI or even a CLI.
+
+ENTER libinput
+libinput [https://wayland.freedesktop.org/libinput/doc/latest/index.html] is a
+library which is used to handle input devices in Ubuntu’s Displa" />
+    <meta property="og:url" content="https://sparker0i.me/blog/enable-natural-scrolling-using-libinput/" />
+    <meta property="og:image" content="https://sparker0i.me/blog/content/images/wordpress/2018/05/gnome-touchpad-featured-2.jpg" />
+    <meta property="article:published_time" content="2018-05-26T10:36:14.000Z" />
+    <meta property="article:modified_time" content="2019-11-19T21:05:53.000Z" />
+    <meta property="article:tag" content="ASUS" />
+    <meta property="article:tag" content="Natural" />
+    <meta property="article:tag" content="Reverse" />
+    <meta property="article:tag" content="Scrolling" />
+    <meta property="article:tag" content="Touchpad" />
+    <meta property="article:tag" content="Ubuntu" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Enable Natural Scrolling for Trackpads using libinput" />
+    <meta name="twitter:description" content="I had recently upgraded to Ubuntu 18.04 and installed Unity back. After
+installing, I found that Reverse Scrolling/Natural Scrolling option was missing
+from Settings in Unity, while it was available in GNOME settings. This was
+pretty much a deal breaker for me, so I had to find a way to enable reverse
+scrolling via some GUI or even a CLI.
+
+ENTER libinput
+libinput [https://wayland.freedesktop.org/libinput/doc/latest/index.html] is a
+library which is used to handle input devices in Ubuntu’s Displa" />
+    <meta name="twitter:url" content="https://sparker0i.me/blog/enable-natural-scrolling-using-libinput/" />
+    <meta name="twitter:image" content="https://sparker0i.me/blog/content/images/wordpress/2018/05/gnome-touchpad-featured-2.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Aaditya Menon" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="ASUS, Natural, Reverse, Scrolling, Touchpad, Ubuntu" />
+    <meta name="twitter:site" content="@Sparker0i" />
+    <meta name="twitter:creator" content="@Sparker0i" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="400" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Sparker0i&#x27;s Blog",
+        "logo": "https://sparker0i.me/blog/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Aaditya Menon",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s=512&d=mm&r=g",
+            "width": 512,
+            "height": 512
+        },
+        "url": "https://sparker0i.me/blog/author/sparker0i/",
+        "sameAs": [
+            "https://twitter.com/Sparker0i"
+        ]
+    },
+    "headline": "Enable Natural Scrolling for Trackpads using libinput",
+    "url": "https://sparker0i.me/blog/enable-natural-scrolling-using-libinput/",
+    "datePublished": "2018-05-26T10:36:14.000Z",
+    "dateModified": "2019-11-19T21:05:53.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://sparker0i.me/blog/content/images/wordpress/2018/05/gnome-touchpad-featured-2.jpg",
+        "width": 800,
+        "height": 400
+    },
+    "keywords": "ASUS, Natural, Reverse, Scrolling, Touchpad, Ubuntu",
+    "description": "I had recently upgraded to Ubuntu 18.04 and installed Unity back. After\ninstalling, I found that Reverse Scrolling/Natural Scrolling option was missing\nfrom Settings in Unity, while it was available in GNOME settings. This was\npretty much a deal breaker for me, so I had to find a way to enable reverse\nscrolling via some GUI or even a CLI.\n\nENTER libinput\nlibinput [https://wayland.freedesktop.org/libinput/doc/latest/index.html] is a\nlibrary which is used to handle input devices in Ubuntu’s Displa",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sparker0i.me/blog/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.0" />
+    <link rel="alternate" type="application/rss+xml" title="Sparker0i&#x27;s Blog" href="https://sparker0i.me/blog/rss/" />
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      const ghostHost = "https://sparker0i.me/blog"
+      // @license-end
+    </script>
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      WebFontConfig = {
+        google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
+      };
+
+      (function (d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+      // @license-end
+    </script>
+  </head>
+  <body class="post-template tag-asus tag-natural tag-reverse tag-scrolling tag-touchpad tag-ubuntu">
+    
+
+<div class="main-wrap">
+  
+  <header class="m-header with-picture js-header">
+  <div class="m-mobile-topbar" data-aos="fade-down">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+      <span class="icon-menu"></span>
+    </button>
+      <a href="https://sparker0i.me/blog" class="m-logo in-mobile-topbar">
+        <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+      </a>
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
+      <span class="icon-search"></span>
+    </button>
+  </div>
+
+  <div class="m-menu js-menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+      <span class="icon-close"></span>
+    </button>
+    <div class="m-menu__main" data-aos="fade-down">
+      <div class="l-wrapper">
+        <div class="m-nav">
+          <nav class="m-nav__left">
+            <ul role="submenu">
+                <li class="only-desktop" role="menuitem">
+                  <a href="https://sparker0i.me/blog" class="m-logo">
+                    <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+                  </a>
+                </li>
+              <li role="menuitem" class="js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
+                  <span class="icon-more"></span>
+                </button>
+                <div class="m-submenu js-submenu">
+                  <div class="l-wrapper in-submenu">
+                    <section class="m-recent-articles">
+                      <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+                      <div class="js-recent-articles">
+                        <div>
+                          <a href="/ipl-2020-auction-experience-with-rcb/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/2019/12/77062915_620803191999653_2243580465715061965_n.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">IPL 2020 Auction experience with RCB</h3>
+                            <span class="m-recent-article__date">8 minutes ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/mysql-installation-inside-docker-on-mac/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2019/03/1_fqwE_Sk2pCO5orZTRoivgg.png"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">MySQL installation inside Docker on Mac</h3>
+                            <span class="m-recent-article__date">9 months ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/ipl-auction-strategies-analysis-and-likely-xi-prediction/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/12/dc-Cover-omhjdhpamrm6sqm474hartk7j5-20180527190509.Medi_.jpeg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">IPL Auction Strategies: Analysis and Likely XI Prediction</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/nokia-7-plus-phone-android-one-review/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/09/nokia-7-plus-mwc-launch.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">Nokia 7 Plus review: The best Android One Smartphone?</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="m-tags">
+                      <h3 class="m-submenu-title">Tags</h3>
+                      <ul>
+                        <li>
+                          <a href="/tag/2fa/">2FA</a>
+                        </li>
+                        <li>
+                          <a href="/tag/3-years/">3 years</a>
+                        </li>
+                        <li>
+                          <a href="/tag/adb/">ADB</a>
+                        </li>
+                        <li>
+                          <a href="/tag/asus/">ASUS</a>
+                        </li>
+                        <li>
+                          <a href="/tag/all-rounder/">All Rounder</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android/">Android</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-one/">Android One</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-project/">Android Project</a>
+                        </li>
+                        <li>
+                          <a href="/tag/assignment/">Assignment</a>
+                        </li>
+                        <li>
+                          <a href="/tag/csk/">CSK</a>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="m-nav__right">
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+              <span class="icon-search"></span>
+            </button>
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle dark mode">
+              <input type="checkbox" class="js-toggle-darkmode">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  
+
+  <section class="m-hero with-picture" data-aos="fade">
+    <div class="m-hero__picture in-post"></div>
+  </section>
+  
+  <main>
+    <article>
+      <div class="l-content in-post">
+        <div class="l-wrapper in-post  js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
+          <div class="l-post-content js-progress-content">
+            <header class="m-heading">
+              <h1 class="m-heading__title in-post">Enable Natural Scrolling for Trackpads using libinput</h1>
+              <div class="m-heading__meta">
+                <a href="https://sparker0i.me/blog/tag/asus/" class="m-heading__meta__tag">ASUS</a>
+                <span class="m-heading__meta__divider">&bull;</span>
+                <span class="m-heading__meta__time">May 26, 2018</span>
+              </div>
+            </header>
+            <div class="pos-relative js-post-content">
+              <div class="m-share">
+                <div class="m-share__content js-sticky">
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=https://sparker0i.me/blog/enable-natural-scrolling-using-libinput/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
+                    <span class="icon-facebook"></span>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?text=Enable%20Natural%20Scrolling%20for%20Trackpads%20using%20libinput&url=https://sparker0i.me/blog/enable-natural-scrolling-using-libinput/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
+                    <span class="icon-arrow-top"></span>
+                    <svg>
+                      <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <!--kg-card-begin: html--><p>I had recently upgraded to Ubuntu 18.04 and installed Unity back. After installing, I found that Reverse Scrolling/Natural Scrolling option was missing from Settings in Unity, while it was available in GNOME settings. This was pretty much a deal breaker for me, so I had to find a way to enable reverse scrolling via some GUI or even a CLI.</p>
+<h3>ENTER libinput</h3>
+<p><a href="https://wayland.freedesktop.org/libinput/doc/latest/index.html">libinput</a> is a library which is used to handle input devices in Ubuntu&#8217;s Display Server X.org. With further investigation, I found out that Unity, GNOME and XFCE and a host of Desktop environments support it. My hopes were high after discovering this. To enable Reverse Scrolling via libinput, follow the steps below.</p>
+<h3>FIND WHICH IS YOUR TOUCHPAD</h3>
+<p>You need to find which one among the input devices is your touchpad since libinput is used to handle input devices. This can be easily known by executing the command <span class="lang:sh decode:true crayon-inline">xinput &#8211;list<br />
+</span></p>
+<pre class="lang:sh decode:true">⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
+⎜   ↳ Elan Touchpad                           	id=12	[slave  pointer  (2)]
+⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
+    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
+    ↳ Power Button                            	id=6	[slave  keyboard (3)]
+    ↳ Asus Wireless Radio Control             	id=7	[slave  keyboard (3)]
+    ↳ Video Bus                               	id=8	[slave  keyboard (3)]
+    ↳ Video Bus                               	id=9	[slave  keyboard (3)]
+    ↳ Sleep Button                            	id=10	[slave  keyboard (3)]
+    ↳ USB Camera: USB Camera                  	id=11	[slave  keyboard (3)]
+    ↳ Asus WMI hotkeys                        	id=13	[slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard            	id=14	[slave  keyboard (3)]
+</pre>
+<p>Now obviously my touchpad cannot be a keyboard, so it has to be one among the Virtual Core Pointer. Elan Touchpad definitely sounded familiar to me, as I had installed its driver in Windows 10.</p>
+<h3>CHECK IF REVERSE SCROLLING CAN BE ENABLED OR NOT</h3>
+<p>The next step is to check whether your touchpad supports Reverse Scrolling or not. While I had an option to enable Reverse Scrolling from Settings when in Unity in Ubuntu 16.04, the option was gone in 18.04, but it was still available in GNOME. So I thought it should be available in libinput as well. To check if I can enable Reverse Scrolling in Unity in Ubuntu 18.04, I tried the command</p>
+<pre class="lang:sh decode:true">xinput --list-props "Elan Touchpad"</pre>
+<p>(PS. Make sure that Elan Touchpad is inside the quotation marks if the name of your touchpad has spaces in between, and I shouldn&#8217;t be telling you to substitute Elan Touchpad with the name of your touchpad)</p>
+<pre class="lang:sh decode:true">Device 'Elan Touchpad':
+	Device Enabled (145):	1
+	Coordinate Transformation Matrix (147):	1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
+	libinput Tapping Enabled (280):	0
+	libinput Tapping Enabled Default (281):	0
+	libinput Tapping Drag Enabled (282):	1
+	libinput Tapping Drag Enabled Default (283):	1
+	libinput Tapping Drag Lock Enabled (284):	0
+	libinput Tapping Drag Lock Enabled Default (285):	0
+	libinput Tapping Button Mapping Enabled (286):	1, 0
+	libinput Tapping Button Mapping Default (287):	1, 0
+	libinput Natural Scrolling Enabled (288):	0
+	libinput Natural Scrolling Enabled Default (289):	0
+	libinput Disable While Typing Enabled (290):	1
+	libinput Disable While Typing Enabled Default (291):	1
+	libinput Scroll Methods Available (292):	1, 1, 0
+	libinput Scroll Method Enabled (293):	1, 0, 0
+	libinput Scroll Method Enabled Default (294):	1, 0, 0
+	libinput Click Methods Available (295):	1, 1
+	libinput Click Method Enabled (296):	1, 0
+	libinput Click Method Enabled Default (297):	1, 0
+	libinput Middle Emulation Enabled (298):	0
+	libinput Middle Emulation Enabled Default (299):	0
+	libinput Accel Speed (300):	0.000000
+	libinput Accel Speed Default (301):	0.000000
+	libinput Left Handed Enabled (302):	0
+	libinput Left Handed Enabled Default (303):	0
+	libinput Send Events Modes Available (265):	1, 1
+	libinput Send Events Mode Enabled (266):	0, 0
+	libinput Send Events Mode Enabled Default (267):	0, 0
+	Device Node (268):	"/dev/input/event8"
+	Device Product ID (269):	1267, 5
+	libinput Drag Lock Buttons (304):	&lt;no items&gt;
+	libinput Horizontal Scroll Enabled (305):	1
+</pre>
+<p>You should look for an option that has Reverse Scrolling, or Natural Scrolling in it. Luckily I did have an option called <span class="lang:sh decode:true crayon-inline">libinput Natural Scrolling Enabled (288): 0</span>. So I was sure that I can enable it in Ubuntu 18.04. Now it was only a matter of another command, after which I can use Reverse Scrolling without hassles.</p>
+<p>PS. If you do not see an option like Reverse Scrolling anywhere inside that output, I&#8217;m afraid my friend, I cannot help you.</p>
+<h3>ENABLE NATURAL SCROLLING</h3>
+<p>One Command&nbsp; <code class=" language-bash">xinput --set-prop "Elan Touchpad" <span class="token string">"libinput Natural Scrolling Enabled"</span> 1</code></p>
+<p>This was enough to enable Reverse Scrolling. Plus it happened in an instant, I never had to log out or restart at all.</p>
+<p>PS. If the command with the list-props flag output shows something like &#8216;Synaptics&#8217; at the beginning of each prop instead of &#8216;libinput&#8217;, please check the update below.</p>
+<h3>AFTER EXPERIENCES</h3>
+<p>Using libinput I could bring back one feature I loved the most. But the behavior I get with the touchpad in Unity in Ubuntu 16.04 and 18.04 is completely different. There are three pain points with the new experience in Ubuntu 18.04:</p>
+<ul>
+<li>I could select text by tapping on the touchpad, and not clicking it.</li>
+<li>You could keep selecting the text and scroll up or down with the touchpad</li>
+<li>I could tap using two fingers to emulate right click</li>
+</ul>
+<p>Sadly I can&#8217;t do either of these things with Ubuntu 18.04. While I can still do point no. 1 and 3 using GNOME, I can&#8217;t do point 2 with that either. So I still have hopes of getting points 1 and 3 back on track with libinput again, but I&#8217;ll pray that one day I&#8217;m able to get back point 2 as well.</p>
+<h3>UPDATE</h3>
+<p>With libinput, I ran the following command <span class="lang:sh decode:true crayon-inline">xinput &#8211;set-prop &#8220;Elan Touchpad&#8221; &#8220;libinput Tapping Enabled&#8221; 1</span>, and I was able to get point 1 and 3 working fine. Point 2 was still not working.</p>
+<p>I asked my friends who had a similar laptop model, to run the command and then they got synaptics props instead of libinput. I realized that Ubuntu 18.04 did not come with synaptics, rather it came with libinput. Now I installed synaptics using&nbsp;<span class="lang:sh decode:true crayon-inline ">sudo apt install xserver-xorg-input-synaptics</span>&nbsp; after which I restarted my laptop.</p>
+<p>I was able to get the same Mouse experiences present in Ubuntu 16.04 to Unity in Ubuntu 18.04 without hassles. Moreover, the fine details of touchpad settings like Reverse Scrolling are now back in Touchpad settings in Ubuntu 18.04.</p>
+<!--kg-card-end: html-->
+            </div>
+          </div>
+        </div>
+        <section class="m-author no-subscribers">
+          <div class="m-author__content">
+            <div class="m-author__picture">
+              <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-author-picture" aria-label="Author picture">
+                <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+              </a>
+            </div>
+            <div class="m-author__info">
+              <h4 class="m-author__name">
+                <a href="https://sparker0i.me/blog/author/sparker0i/">Aaditya Menon</a>
+              </h4>
+              <p class="m-author__bio">Little World</p>
+              <ul class="m-author-links">
+                <li>
+                  <a href="https://twitter.com/@Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="m-recommended">
+          <div class="l-wrapper in-recommended">
+            <h3 class="m-section-title in-recommended">Recommended for you</h3>
+            <div class="m-recommended-articles">
+              <div class="m-recommended-slider js-recommended-articles">
+                
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-linux tag-programming tag-python tag-solving-technical tag-ubuntu">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/11/ubuntu.png">
+      <a href="/remove-linux-bootloader-code-from-windows/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/linux/" class="m-article-card__tag">Linux</a>
+      <a href="/remove-linux-bootloader-code-from-windows/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Remove Ubuntu Bootloader code from Windows 10</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-linux tag-programming tag-python tag-ubuntu">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2016/07/python.jpg">
+      <a href="/read-two-numbers-from-xlsx-spreadsheet/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/linux/" class="m-article-card__tag">Linux</a>
+      <a href="/read-two-numbers-from-xlsx-spreadsheet/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Import Excel Sheet into Python</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-graphics tag-linux tag-os tag-ubuntu">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/10/nvidia-header.png">
+      <a href="/install-nvidia-drivers-the-right-way-on-linux/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/graphics/" class="m-article-card__tag">Graphics</a>
+      <a href="/install-nvidia-drivers-the-right-way-on-linux/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Install NVidia drivers the right way on Linux</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>4 years ago</span>
+          <span>&bull;</span>
+          <span>4 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+</div>
+
+
+
+    
+<div class="m-search js-search">
+  <button class="m-icon-button outlined as-close-search js-close-search" aria-label="Close search">
+    <span class="icon-close"></span>
+  </button>
+  <div class="m-search__content">
+    <form class="m-search__form">
+      <fieldset>
+        <span class="icon-search m-search-icon"></span>
+        <input type="text" class="m-input in-search js-input-search" placeholder="Type to search" aria-label="Type to search">
+      </fieldset>
+    </form>
+    <div class="js-search-results hide"></div>
+    <p class="m-not-found align-center hide js-no-results">
+      No results for your search, try something different.
+    </p>
+  </div>
+</div>
+
+    
+<footer class="m-footer">
+  <div class="m-footer__content">
+    <p class="m-footer-copyright">
+      <span>Sparker0i&#x27;s Blog &copy; 2019</span>
+      <span>&nbsp; &bull; &nbsp;</span>
+      <span>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+    </p>
+
+    <nav class="m-footer-social">
+        <a href="https://twitter.com/Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+          <span class="icon-twitter"></span>
+        </a>
+    </nav>
+    <p class="m-footer-copyright jslicense">
+      <a href="/assets/html/javascript.html?v=de61dba188" rel="jslicense">JavaScript license information</a>
+    </p>
+  </div>
+</footer>
+
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+    <script defer src="https://unpkg.com/@tryghost/content-api@1.2.7/umd/content-api.min.js"></script>
+    <script defer src="/assets/js/manifest.js?v=de61dba188"></script>
+    <script defer src="/assets/js/vendor.js?v=de61dba188"></script>
+    <script defer src="/assets/js/app.js?v=de61dba188"></script>
+
+      <script defer src="/assets/js/post.js?v=de61dba188"></script>
+
+
+    
+  </body>
+</html>

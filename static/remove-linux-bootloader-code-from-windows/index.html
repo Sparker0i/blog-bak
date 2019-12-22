@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Remove Ubuntu Bootloader code from Windows 10</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css?v=de61dba188" media="screen" />
+
+      <style>
+    .m-hero__picture {
+      background-image: url(/content/images/size/w2000/wordpress/2017/11/ubuntu.png);
+    }
+  
+    @media(max-width: 1000px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w1000/wordpress/2017/11/ubuntu.png);
+      }
+    }
+  
+    @media(max-width: 600px) {
+      .m-hero__picture {
+        background-image: url(/content/images/size/w600/wordpress/2017/11/ubuntu.png);
+      }
+    }
+  </style>
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://sparker0i.me/blog/remove-linux-bootloader-code-from-windows/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://sparker0i.me/blog/remove-linux-bootloader-code-from-windows/amp/" />
+    
+    <meta property="og:site_name" content="Sparker0i&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Remove Ubuntu Bootloader code from Windows 10" />
+    <meta property="og:description" content="Hello folks, I am back with yet another post in the Solving Technical Series. In
+certain situations, when a program you want to run does not work properly on an
+OS, you first blame the program. Then you try to run it on another OS, and find
+it working without issues. Then you go back and blame the OS. This is what
+happens to me when I try to run the Android Studio Emulator on Linux. Its screen
+size remains small despite resizing. Resizing works fine for Windows 10.
+
+As I am a part of the FOSS Cl" />
+    <meta property="og:url" content="https://sparker0i.me/blog/remove-linux-bootloader-code-from-windows/" />
+    <meta property="og:image" content="https://sparker0i.me/blog/content/images/wordpress/2017/11/ubuntu.png" />
+    <meta property="article:published_time" content="2017-02-07T18:59:25.000Z" />
+    <meta property="article:modified_time" content="2017-11-04T21:29:47.000Z" />
+    <meta property="article:tag" content="Linux" />
+    <meta property="article:tag" content="Programming" />
+    <meta property="article:tag" content="Python" />
+    <meta property="article:tag" content="Solving-Technical" />
+    <meta property="article:tag" content="Ubuntu" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Remove Ubuntu Bootloader code from Windows 10" />
+    <meta name="twitter:description" content="Hello folks, I am back with yet another post in the Solving Technical Series. In
+certain situations, when a program you want to run does not work properly on an
+OS, you first blame the program. Then you try to run it on another OS, and find
+it working without issues. Then you go back and blame the OS. This is what
+happens to me when I try to run the Android Studio Emulator on Linux. Its screen
+size remains small despite resizing. Resizing works fine for Windows 10.
+
+As I am a part of the FOSS Cl" />
+    <meta name="twitter:url" content="https://sparker0i.me/blog/remove-linux-bootloader-code-from-windows/" />
+    <meta name="twitter:image" content="https://sparker0i.me/blog/content/images/wordpress/2017/11/ubuntu.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Aaditya Menon" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Linux, Programming, Python, Solving-Technical, Ubuntu" />
+    <meta name="twitter:site" content="@Sparker0i" />
+    <meta name="twitter:creator" content="@Sparker0i" />
+    <meta property="og:image:width" content="540" />
+    <meta property="og:image:height" content="243" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Sparker0i&#x27;s Blog",
+        "logo": "https://sparker0i.me/blog/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Aaditya Menon",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s=512&d=mm&r=g",
+            "width": 512,
+            "height": 512
+        },
+        "url": "https://sparker0i.me/blog/author/sparker0i/",
+        "sameAs": [
+            "https://twitter.com/Sparker0i"
+        ]
+    },
+    "headline": "Remove Ubuntu Bootloader code from Windows 10",
+    "url": "https://sparker0i.me/blog/remove-linux-bootloader-code-from-windows/",
+    "datePublished": "2017-02-07T18:59:25.000Z",
+    "dateModified": "2017-11-04T21:29:47.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://sparker0i.me/blog/content/images/wordpress/2017/11/ubuntu.png",
+        "width": 540,
+        "height": 243
+    },
+    "keywords": "Linux, Programming, Python, Solving-Technical, Ubuntu",
+    "description": "Hello folks, I am back with yet another post in the Solving Technical Series. In\ncertain situations, when a program you want to run does not work properly on an\nOS, you first blame the program. Then you try to run it on another OS, and find\nit working without issues. Then you go back and blame the OS. This is what\nhappens to me when I try to run the Android Studio Emulator on Linux. Its screen\nsize remains small despite resizing. Resizing works fine for Windows 10.\n\nAs I am a part of the FOSS Cl",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sparker0i.me/blog/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.0" />
+    <link rel="alternate" type="application/rss+xml" title="Sparker0i&#x27;s Blog" href="https://sparker0i.me/blog/rss/" />
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      const ghostHost = "https://sparker0i.me/blog"
+      // @license-end
+    </script>
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      WebFontConfig = {
+        google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
+      };
+
+      (function (d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+      // @license-end
+    </script>
+  </head>
+  <body class="post-template tag-linux tag-programming tag-python tag-solving-technical tag-ubuntu">
+    
+
+<div class="main-wrap">
+  
+  <header class="m-header with-picture js-header">
+  <div class="m-mobile-topbar" data-aos="fade-down">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+      <span class="icon-menu"></span>
+    </button>
+      <a href="https://sparker0i.me/blog" class="m-logo in-mobile-topbar">
+        <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+      </a>
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
+      <span class="icon-search"></span>
+    </button>
+  </div>
+
+  <div class="m-menu js-menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+      <span class="icon-close"></span>
+    </button>
+    <div class="m-menu__main" data-aos="fade-down">
+      <div class="l-wrapper">
+        <div class="m-nav">
+          <nav class="m-nav__left">
+            <ul role="submenu">
+                <li class="only-desktop" role="menuitem">
+                  <a href="https://sparker0i.me/blog" class="m-logo">
+                    <img src="/content/images/2019/11/0fadcb564c6e2565ee5b75b146e48d5c.png" alt="Sparker0i&#x27;s Blog">
+                  </a>
+                </li>
+              <li role="menuitem" class="js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
+                  <span class="icon-more"></span>
+                </button>
+                <div class="m-submenu js-submenu">
+                  <div class="l-wrapper in-submenu">
+                    <section class="m-recent-articles">
+                      <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+                      <div class="js-recent-articles">
+                        <div>
+                          <a href="/ipl-2020-auction-experience-with-rcb/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/2019/12/77062915_620803191999653_2243580465715061965_n.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">IPL 2020 Auction experience with RCB</h3>
+                            <span class="m-recent-article__date">8 minutes ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/mysql-installation-inside-docker-on-mac/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2019/03/1_fqwE_Sk2pCO5orZTRoivgg.png"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">MySQL installation inside Docker on Mac</h3>
+                            <span class="m-recent-article__date">9 months ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/ipl-auction-strategies-analysis-and-likely-xi-prediction/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/12/dc-Cover-omhjdhpamrm6sqm474hartk7j5-20180527190509.Medi_.jpeg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">IPL Auction Strategies: Analysis and Likely XI Prediction</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="/nokia-7-plus-phone-android-one-review/" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              <div class="lozad" data-background-image="/content/images/size/w300/wordpress/2018/09/nokia-7-plus-mwc-launch.jpg"></div>
+                            </div>
+                            <h3 class="m-recent-article__title">Nokia 7 Plus review: The best Android One Smartphone?</h3>
+                            <span class="m-recent-article__date">a year ago</span>
+                          </a>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="m-tags">
+                      <h3 class="m-submenu-title">Tags</h3>
+                      <ul>
+                        <li>
+                          <a href="/tag/2fa/">2FA</a>
+                        </li>
+                        <li>
+                          <a href="/tag/3-years/">3 years</a>
+                        </li>
+                        <li>
+                          <a href="/tag/adb/">ADB</a>
+                        </li>
+                        <li>
+                          <a href="/tag/asus/">ASUS</a>
+                        </li>
+                        <li>
+                          <a href="/tag/all-rounder/">All Rounder</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android/">Android</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-one/">Android One</a>
+                        </li>
+                        <li>
+                          <a href="/tag/android-project/">Android Project</a>
+                        </li>
+                        <li>
+                          <a href="/tag/assignment/">Assignment</a>
+                        </li>
+                        <li>
+                          <a href="/tag/csk/">CSK</a>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="m-nav__right">
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+              <span class="icon-search"></span>
+            </button>
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle dark mode">
+              <input type="checkbox" class="js-toggle-darkmode">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  
+
+  <section class="m-hero with-picture" data-aos="fade">
+    <div class="m-hero__picture in-post"></div>
+  </section>
+  
+  <main>
+    <article>
+      <div class="l-content in-post">
+        <div class="l-wrapper in-post  js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
+          <div class="l-post-content js-progress-content">
+            <header class="m-heading">
+              <h1 class="m-heading__title in-post">Remove Ubuntu Bootloader code from Windows 10</h1>
+              <div class="m-heading__meta">
+                <a href="https://sparker0i.me/blog/tag/linux/" class="m-heading__meta__tag">Linux</a>
+                <span class="m-heading__meta__divider">&bull;</span>
+                <span class="m-heading__meta__time">Feb 08, 2017</span>
+              </div>
+            </header>
+            <div class="pos-relative js-post-content">
+              <div class="m-share">
+                <div class="m-share__content js-sticky">
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=https://sparker0i.me/blog/remove-linux-bootloader-code-from-windows/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
+                    <span class="icon-facebook"></span>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?text=Remove%20Ubuntu%20Bootloader%20code%20from%20Windows%2010&url=https://sparker0i.me/blog/remove-linux-bootloader-code-from-windows/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
+                    <span class="icon-arrow-top"></span>
+                    <svg>
+                      <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <!--kg-card-begin: html--><p>Hello folks, I am back with yet another post in the Solving Technical Series. In certain situations, when a program you want to run does not work properly on an OS, you first blame the program. Then you try to run it on another OS, and find it working without issues. Then you go back and blame the OS. This is what happens to me when I try to run the Android Studio Emulator on Linux. Its screen size remains small despite resizing. Resizing works fine for Windows 10.</p>
+<p>As I am a part of the FOSS Club of my college, I know that I must be embracing Open Source Software, but in certain situations like these, my head just gets fried up.</p>
+<p>So one fine day, I decided to remove Linux from my PC. I removed those Linux partitions, but unfortunately the Ubuntu Bootloader (aka GRUB) was still present on the Boot screen. Then I had to find a way to remove it from Windows. And voila, there is a way out.</p>
+<p></p>
+<h3>STEPS TO BE FOLLOWED</h3>
+<ul>
+<li>Open Command Prompt as an Administrator.</p>
+</li>
+<li>
+<p>Now enter <code>diskpart</code> on the CMD screen</p>
+</li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/diskpart.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/diskpart.png" alt="" width="856" height="450" class="alignnone size-full wp-image-139" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/diskpart.png 856w, https://sparker0i.me/blog/content/images/wordpress/2017/11/diskpart-300x158.png 300w, https://sparker0i.me/blog/content/images/wordpress/2017/11/diskpart-768x404.png 768w" sizes="(max-width: 856px) 100vw, 856px" /></a></p>
+<ul>
+<li>Now enter <code>list disk</code>. You will see your Hard Disk and the external storage drives connected to your PC. Select the PC Hard Disk Number. It should be 0 by default on all the systems. But still, check your hardware and then do.</li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/list-disk.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/list-disk.png" alt="" width="853" height="451" class="alignnone size-full wp-image-140" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/list-disk.png 853w, https://sparker0i.me/blog/content/images/wordpress/2017/11/list-disk-300x159.png 300w, https://sparker0i.me/blog/content/images/wordpress/2017/11/list-disk-768x406.png 768w" sizes="(max-width: 853px) 100vw, 853px" /></a></p>
+<ul>
+<li>Select Disk 0 (or whatever number it is of your HDD) by typing <code>sel disk 0</code>. Now to check a list of partitions in it, type <code>list vol</code></li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/list-vol.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/list-vol.png" alt="" width="860" height="451" class="alignnone size-full wp-image-144" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/list-vol.png 860w, https://sparker0i.me/blog/content/images/wordpress/2017/11/list-vol-300x157.png 300w, https://sparker0i.me/blog/content/images/wordpress/2017/11/list-vol-768x403.png 768w" sizes="(max-width: 860px) 100vw, 860px" /></a></p>
+<ul>
+<li>On 64 bit systems, it should be a 100 MB FAT32 system that has &#8216;System&#8217; as the Info in it. Note the volume number. In my case, it is 9</li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/diskpart.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/diskpart.png" alt="" width="856" height="450" class="alignnone size-full wp-image-139" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/diskpart.png 856w, https://sparker0i.me/blog/content/images/wordpress/2017/11/diskpart-300x158.png 300w, https://sparker0i.me/blog/content/images/wordpress/2017/11/diskpart-768x404.png 768w" sizes="(max-width: 856px) 100vw, 856px" /></a></p>
+<ul>
+<li>Type <code>sel vol 9</code>.</li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/sel-vol.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/sel-vol.png" alt="" width="858" height="453" class="alignnone size-full wp-image-146" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/sel-vol.png 858w, https://sparker0i.me/blog/content/images/wordpress/2017/11/sel-vol-300x158.png 300w, https://sparker0i.me/blog/content/images/wordpress/2017/11/sel-vol-768x405.png 768w" sizes="(max-width: 858px) 100vw, 858px" /></a></p>
+<ul>
+<li>Now this volume has been selected. We now have to assign the disk letter (for which Windows/MS-DOS became famous for). I assigned a letter Z, by typing <code>assign letter=Z:</code>. Then <code>exit</code> diskpart.</p>
+</li>
+<li>
+<p>Now you are back to your regular CMD Prompt. Now type <code>cd /d Z:</code>. Note the <code>/d</code> arguement.</p>
+</li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/cd-Z.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/cd-Z.png" alt="" width="858" height="454" class="alignnone size-full wp-image-141" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/cd-Z.png 858w, https://sparker0i.me/blog/content/images/wordpress/2017/11/cd-Z-300x159.png 300w, https://sparker0i.me/blog/content/images/wordpress/2017/11/cd-Z-768x406.png 768w" sizes="(max-width: 858px) 100vw, 858px" /></a></p>
+<ul>
+<li>Now for this step, there are two ways to approach this. Some systems will have the <code>ls</code> command, while some won&#8217;t. While I would recommend using the <code>ls</code> command, for those who don&#8217;t have it can use the <code>dir</code> command as well. Type <code>ls</code> or <code>dir</code>, depending on the program you have</li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/dir.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/dir.png" alt="" width="856" height="449" class="alignnone size-full wp-image-142" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/dir.png 856w, https://sparker0i.me/blog/content/images/wordpress/2017/11/dir-300x157.png 300w, https://sparker0i.me/blog/content/images/wordpress/2017/11/dir-768x403.png 768w" sizes="(max-width: 856px) 100vw, 856px" /></a></p>
+<ul>
+<li><code>cd</code> into the EFI folder. Then type <code>ls</code> again. You will now see a <code>Ubuntu</code> option.</li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/dir2.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/dir2.png" alt="" width="517" height="164" class="alignnone size-full wp-image-143" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/dir2.png 517w, https://sparker0i.me/blog/content/images/wordpress/2017/11/dir2-300x95.png 300w" sizes="(max-width: 517px) 100vw, 517px" /></a></p>
+<ul>
+<li>To remove this Ubuntu GRUB, type <code>rmdir /s Ubuntu</code>. It will ask for a confirmation Prompt, type <code>Y</code> and press Enter.</li>
+</ul>
+<p><a href="https://sparker0i.me/blog/content/images/wordpress/2017/11/rmdir.png"><img src="https://sparker0i.me/blog/content/images/wordpress/2017/11/rmdir.png" alt="" width="309" height="78" class="alignnone size-full wp-image-145" srcset="https://sparker0i.me/blog/content/images/wordpress/2017/11/rmdir.png 309w, https://sparker0i.me/blog/content/images/wordpress/2017/11/rmdir-300x76.png 300w" sizes="(max-width: 309px) 100vw, 309px" /></a></p>
+<ul>
+<li>Voila! Your PC won&#8217;t have the Ubuntu Bootloader anymore.</li>
+</ul>
+<p></p>
+<h3>CONCLUSION</h3>
+<p>Sometimes, at any given point of time, any given OS can be frustrating. Choose your OS depending on the features you need.</p>
+<p></p>
+<h3>UPDATE</h3>
+<p>Android Studio 2.3 Update on Linux fixes the issue I had. So I am back on Linux. Hell Yeah!</p>
+<!--kg-card-end: html-->
+            </div>
+          </div>
+        </div>
+        <section class="m-author no-subscribers">
+          <div class="m-author__content">
+            <div class="m-author__picture">
+              <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-author-picture" aria-label="Author picture">
+                <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+              </a>
+            </div>
+            <div class="m-author__info">
+              <h4 class="m-author__name">
+                <a href="https://sparker0i.me/blog/author/sparker0i/">Aaditya Menon</a>
+              </h4>
+              <p class="m-author__bio">Little World</p>
+              <ul class="m-author-links">
+                <li>
+                  <a href="https://twitter.com/@Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="m-recommended">
+          <div class="l-wrapper in-recommended">
+            <h3 class="m-section-title in-recommended">Recommended for you</h3>
+            <div class="m-recommended-articles">
+              <div class="m-recommended-slider js-recommended-articles">
+                
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-2fa tag-git tag-github tag-linux tag-programming tag-repo tag-solving-technical tag-two-factor-authentication">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2018/03/shutterstock_641960737.jpg">
+      <a href="/configure-2-factor-authentication-for-github/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/2fa/" class="m-article-card__tag">2FA</a>
+      <a href="/configure-2-factor-authentication-for-github/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Configure 2-Factor Authentication for Github</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>2 years ago</span>
+          <span>&bull;</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-asus tag-natural tag-reverse tag-scrolling tag-touchpad tag-ubuntu">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2018/05/gnome-touchpad-featured-2.jpg">
+      <a href="/enable-natural-scrolling-using-libinput/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/asus/" class="m-article-card__tag">ASUS</a>
+      <a href="/enable-natural-scrolling-using-libinput/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">Enable Natural Scrolling for Trackpads using libinput</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>2 years ago</span>
+          <span>&bull;</span>
+          <span>4 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item">
+    <article class="m-article-card post tag-android tag-assignment tag-java tag-programming tag-simple-weather tag-workshop">
+      <div class="m-article-card__picture lozad" data-background-image="/content/images/size/w600/wordpress/2017/11/pp.jpg">
+      <a href="/how-it-all-began/" class="m-article-card__picture-link" aria-label="Article"></a>
+      <a href="https://sparker0i.me/blog/author/sparker0i/" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Aaditya Menon ">
+          <div style="background-image: url(https://secure.gravatar.com/avatar/d031510a601071a66a6ff31d975a263b?s&#x3D;512&amp;d&#x3D;mm&amp;r&#x3D;g);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="https://sparker0i.me/blog/tag/android/" class="m-article-card__tag">Android</a>
+      <a href="/how-it-all-began/" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title">How It All Began - The Journey To Android App Development</h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 years ago</span>
+          <span>&bull;</span>
+          <span>4 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+</div>
+
+
+
+    
+<div class="m-search js-search">
+  <button class="m-icon-button outlined as-close-search js-close-search" aria-label="Close search">
+    <span class="icon-close"></span>
+  </button>
+  <div class="m-search__content">
+    <form class="m-search__form">
+      <fieldset>
+        <span class="icon-search m-search-icon"></span>
+        <input type="text" class="m-input in-search js-input-search" placeholder="Type to search" aria-label="Type to search">
+      </fieldset>
+    </form>
+    <div class="js-search-results hide"></div>
+    <p class="m-not-found align-center hide js-no-results">
+      No results for your search, try something different.
+    </p>
+  </div>
+</div>
+
+    
+<footer class="m-footer">
+  <div class="m-footer__content">
+    <p class="m-footer-copyright">
+      <span>Sparker0i&#x27;s Blog &copy; 2019</span>
+      <span>&nbsp; &bull; &nbsp;</span>
+      <span>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+    </p>
+
+    <nav class="m-footer-social">
+        <a href="https://twitter.com/Sparker0i" target="_blank" rel="noopener" aria-label="Twitter">
+          <span class="icon-twitter"></span>
+        </a>
+    </nav>
+    <p class="m-footer-copyright jslicense">
+      <a href="/assets/html/javascript.html?v=de61dba188" rel="jslicense">JavaScript license information</a>
+    </p>
+  </div>
+</footer>
+
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+    <script defer src="https://unpkg.com/@tryghost/content-api@1.2.7/umd/content-api.min.js"></script>
+    <script defer src="/assets/js/manifest.js?v=de61dba188"></script>
+    <script defer src="/assets/js/vendor.js?v=de61dba188"></script>
+    <script defer src="/assets/js/app.js?v=de61dba188"></script>
+
+      <script defer src="/assets/js/post.js?v=de61dba188"></script>
+
+
+    
+  </body>
+</html>
