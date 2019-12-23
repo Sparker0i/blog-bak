@@ -8,7 +8,7 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/app.css?v=4687b335b1" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css?v=4a13c6020d" media="screen" />
 
     
 
@@ -82,7 +82,7 @@
                               <div class="lozad" data-background-image="/content/images/size/w300/2019/12/77062915_620803191999653_2243580465715061965_n.jpg"></div>
                             </div>
                             <h3 class="m-recent-article__title">IPL 2020 Auction experience with RCB</h3>
-                            <span class="m-recent-article__date">3 hours ago</span>
+                            <span class="m-recent-article__date">a day ago</span>
                           </a>
                         </div>
                         <div>
@@ -215,16 +215,16 @@
         </a>
     </nav>
     <p class="m-footer-copyright jslicense">
-      <a href="/assets/html/javascript.html?v=4687b335b1" rel="jslicense">JavaScript license information</a>
+      <a href="/assets/html/javascript.html?v=4a13c6020d" rel="jslicense">JavaScript license information</a>
     </p>
   </div>
 </footer>
 
     <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
     <script defer src="https://unpkg.com/@tryghost/content-api@1.2.7/umd/content-api.min.js"></script>
-    <script defer src="/assets/js/manifest.js?v=4687b335b1"></script>
-    <script defer src="/assets/js/vendor.js?v=4687b335b1"></script>
-    <script defer src="/assets/js/app.js?v=4687b335b1"></script>
+    <script defer src="/assets/js/manifest.js?v=4a13c6020d"></script>
+    <script defer src="/assets/js/vendor.js?v=4a13c6020d"></script>
+    <script defer src="/assets/js/app.js?v=4a13c6020d"></script>
 
     
 
